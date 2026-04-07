@@ -17,3 +17,4 @@ This repository manages my Dev.to articles with GitHub.
 - Publish/update posts to Dev.to with GitHub Actions
 
 - testinput
+- testinput2
