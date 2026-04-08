@@ -5,19 +5,7 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "blog-posts/**"
-      - "dev-to-git.json"
-      - "package.json"
-      - "package-lock.json"
-      - ".github/workflows/deploy-devto.yml"
   pull_request:
-    paths:
-      - "blog-posts/**"
-      - "dev-to-git.json"
-      - "package.json"
-      - "package-lock.json"
-      - ".github/workflows/deploy-devto.yml"
 
 jobs:
   build:
