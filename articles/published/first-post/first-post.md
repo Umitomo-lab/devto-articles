@@ -22,5 +22,5 @@ cover_image: https://raw.githubusercontent.com/Umitomo-lab/devto-articles/main/a
 - dev-to-git で Dev.to に反映
 <!--
 画像を添付したい場合は、以下の様に記述する。assetsフォルダに画像ファイルを格納。
-![テスト画像](./assets/testimage.png)
+The following is an image: ![alt text](./assets/image.png 'Title image').
 -->
