@@ -9,6 +9,10 @@
     "format:check": "prettier --check .",
     "dev-to-git": "dev-to-git"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Umitomo-lab/devto-articles.git"
+  },
   "devDependencies": {
     "dev-to-git": "^1.4.10",
     "prettier": "^3.6.2"
