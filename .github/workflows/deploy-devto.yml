@@ -1,6 +1,7 @@
 name: Deploy to Dev.to
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -10,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout Repo
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -18,15 +19,10 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm ci
 
-      - name: Confirm secret exists
+      - name: Deploy to Dev.to
         env:
-          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
-        run: |
-          if [ -z "$DEVTO_API_KEY" ]; then
-            echo "DEVTO_API_KEY is not set"
-            exit 1
-          fi
-          echo "DEVTO_API_KEY is set"
+          DEV_TO_GIT_TOKEN: ${{ secrets.DEV_TO_GIT_TOKEN }}
+        run: npm run dev-to-git

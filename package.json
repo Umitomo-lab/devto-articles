@@ -6,9 +6,11 @@
   "scripts": {
     "check": "echo \"No checks yet\"",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "dev-to-git": "dev-to-git"
   },
   "devDependencies": {
+    "dev-to-git": "^1.4.10",
     "prettier": "^3.6.2"
   }
 }
