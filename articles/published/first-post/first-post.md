@@ -1,6 +1,6 @@
 ---
 title: Dev.to自動投稿の初回テスト
-published: True
+published: false
 description: GitHub Actionsからdev-to-gitで同期する初回テスト記事です
 tags: nodejs, githubactions, devto
 series:
