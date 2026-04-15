@@ -1,20 +1,22 @@
 ---
-title: Dev.to自動投稿の初回テスト
+title: Hello Dev.to!👋 I'm starting my journey as a developer🌱
 published: false
-description: GitHub Actionsからdev-to-gitで同期する初回テスト記事です
-tags: nodejs, githubactions, devto
+description: I'm an in-house systems engineer from Japan exploring development through SwiftUI and web technologies, and sharing my learning journey.
+tags: introduction, beginners, devjournal, career
 series:
 canonical_url:
 ---
 
 ## 👋 Hello Dev.to!
 
-Hi, I'm [Your Name] from Japan 🇯🇵
+Hi, I'm Umitomo 🐠 from Japan 🇯🇵  
+I work as an **in-house systems engineer**, mainly focusing on IT infrastructure and security.
 
 ## 💼 What I do
 
-I work in IT infrastructure and security.
-Recently, I've been learning:
+In my daily work, I handle IT infrastructure and security operations.
+
+Outside of work, I enjoy building things as a hobby and have been learning:
 
 - SwiftUI (iOS development)
 - Web development (Remix, Cloudflare)
@@ -22,24 +24,34 @@ Recently, I've been learning:
 
 ## 🚀 What I'm building
 
-I'm currently working on:
+### 🌐 Web Development
 
-- A personal blog using Remix + Cloudflare + microCMS
-- An iOS app using SwiftUI
+I built a personal blog using **Remix + Cloudflare + microCMS**.  
+Since I plan to publish articles on Dev.to, I'm thinking about turning it into a portfolio site using **React Router v7**.
+
+### 📱 iOS Development
+
+I'm currently learning SwiftUI through tutorials.  
+I'd love to build apps that I can enjoy with my kids.
 
 ## 🎯 Why I'm here
 
-I want to:
+I chose Dev.to because:
 
-- Share what I learn
-- Improve my English
-- Connect with developers around the world
+- I want to challenge myself to write in English
+- I like the culture where it's okay to share not only tutorials but also personal learning journeys
+
+I feel it's a great place to grow as a developer while sharing my progress.
 
 ## ✍️ What I’ll write about
 
-- Development logs
-- Technical notes
-- Security learning
+- My journey from infrastructure to development
+- Development logs and technical notes
+- Security learning and experiments
+
+## 🌱 My goal
+
+I'm starting small, but I want to stay consistent and keep learning step by step.
 
 ## 🙌 Nice to meet you!
 
