@@ -5,7 +5,7 @@ description: I'm an in-house systems engineer from Japan exploring development t
 tags: introduction, beginners, devjournal, career
 series:
 canonical_url:
-cover_image: https://raw.githubusercontent.com/Umitomo-lab/devto-articles/main/articles/published/Hello Dev.to! I'm starting my journey as a developer/cover-image.png
+cover_image: https://raw.githubusercontent.com/Umitomo-lab/devto-articles/main/articles/published/first-post/coverimage.jpg
 ---
 
 ## 👋 Hello Dev.to!
