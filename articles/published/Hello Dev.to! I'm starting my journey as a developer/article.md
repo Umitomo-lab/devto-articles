@@ -1,6 +1,6 @@
 ---
 title: Hello Dev.to!👋 I'm starting my journey as a developer🌱
-published: false
+published: True
 description: I'm an in-house systems engineer from Japan exploring development through SwiftUI and web technologies, and sharing my learning journey.
 tags: introduction, beginners, devjournal, career
 series:
