@@ -18,6 +18,11 @@ $('div[data-article-id]').getAttribute('data-article-id')
 Front Matter に追加する
 cover_image: https://raw.githubusercontent.com/{ユーザー}/{リポジトリ}/{ブランチ}/{パス}
 
+■ カバーイメージのサイズ
+Dev.to のカバーイメージサイズは、1000 x 420 ピクセルであるが、
+SNSなど様々なプラットフォームの標準的なアイキャッチ画像のサイズは、1200 × 600 ピクセルである為、そのサイズで統一する。
+また、イメージサイズを、500KB以下に保つようにする。
+
 ■ 画像の配置
 assets フォルダに格納して相対パスで指定
 例: ./assets/image.png
