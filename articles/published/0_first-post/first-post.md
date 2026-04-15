@@ -10,6 +10,10 @@ canonical_url:
 <!--
 【MEMO】
 
+■ 記事IDの取得
+Dev.toの記事ページのWeb開発画面のコンソールで以下を実行
+$('div[data-article-id]').getAttribute('data-article-id')
+
 ■ カバーイメージ
 Front Matter に追加する
 cover_image: https://raw.githubusercontent.com/{ユーザー}/{リポジトリ}/{ブランチ}/{パス}
