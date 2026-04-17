@@ -27,8 +27,6 @@ Example:
 
 - Worked on the SwiftUI tutorial and completed Section 4 Steps 9–12 (Create an algorithm for badges)
 
----
-
 ### 🌐 Web Development
 
 <!--
@@ -40,8 +38,6 @@ Example:
 - Started posting articles on Dev.to
 - Managing my articles using GitHub and GitHub Actions
 
----
-
 ### 🔐 Security (TryHackMe)
 
 <!--
@@ -51,8 +47,6 @@ Example:
 -->
 
 - Completed OWASP Top 10 2025: IAAA Failures and Application Design Flaws on TryHackMe
-
----
 
 ## 💡 Key Takeaways
 
@@ -69,8 +63,6 @@ Example:
 - Learned how to decrypt data using OpenSSL
 - Understood the difference between Base64 encoding and AES-128-ECB encryption
 - Learned how to use Gobuster
-
----
 
 ## 🚀 Next Week
 
