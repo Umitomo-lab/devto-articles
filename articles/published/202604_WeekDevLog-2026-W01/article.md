@@ -17,8 +17,6 @@ beginners, devjournal, wevdev, swift , security
 
 ## 🗓️ This Week
 
----
-
 ### 📱 iOS (SwiftUI)
 
 <!--
