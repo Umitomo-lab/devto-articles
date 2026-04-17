@@ -17,6 +17,8 @@ beginners, devjournal, wevdev, swift , security
 
 ## 🗓️ This Week
 
+---
+
 ### 📱 iOS (SwiftUI)
 
 <!--
@@ -48,6 +50,8 @@ Example:
 
 - Completed OWASP Top 10 2025: IAAA Failures and Application Design Flaws on TryHackMe
 
+---
+
 ## 💡 Key Takeaways
 
 <!--
@@ -63,6 +67,8 @@ Example:
 - Learned how to decrypt data using OpenSSL
 - Understood the difference between Base64 encoding and AES-128-ECB encryption
 - Learned how to use Gobuster
+
+---
 
 ## 🚀 Next Week
 
