@@ -1,6 +1,6 @@
 ---
 title: Weekly Dev Log 2026-W03
-published: False
+published: True
 description: Weekly learning log of iOS, web development, and cybersecurity — 2026-W03
 tags: beginners, devjournal, security, swift
 series:
@@ -83,4 +83,4 @@ Example:
 
 - Continue working on the badge algorithm (Section 5) in the SwiftUI tutorial
 - Continue posting small articles on Dev.to
-- Continue working on the AI security learning path
+- Continue working on the AI security Learning Path
