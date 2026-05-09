@@ -22,7 +22,7 @@ beginners, devjournal, webdev, swift , security
 - I made a little more progress in the SwiftUI tutorial
 - It was my first time using GitHub Copilot in Xcode, and I tried using the chat feature to generate unit tests. I'd also like to gradually explore more advanced features such as custom instructions.
 
-> I also want to thank everyone who commented on my previous [Weekly Dev Log (W03)](https://dev.to/umitomo-lab/weekly-dev-log-2026-w03-30a6)✨
+> I also want to thank everyone who commented on my previous [Weekly Dev Log 2026-W03](https://dev.to/umitomo-lab/weekly-dev-log-2026-w03-30a6)✨
 >
 > Since English is not my native language, I was honestly a bit nervous about posting in English at first. But interacting with people on this platform has been a really valuable learning experience for me.
 >
