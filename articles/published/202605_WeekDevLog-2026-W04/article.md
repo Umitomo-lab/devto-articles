@@ -26,7 +26,7 @@ beginners, devjournal, webdev, swift , security
 >
 > Since English is not my native language, I was honestly a bit nervous about posting in English at first. But interacting with people on this platform has been a really valuable learning experience for me.
 >
-> The kind comments and discussions gave me more confidence to continue sharing my learning journey here. Thank you so much😊!
+> The kind comments and discussions gave me more confidence to continue sharing my learning journey here. Thank you so much😊
 
 ### 📱 iOS (SwiftUI)
 
@@ -36,7 +36,7 @@ Example:
 - Learned state management
 -->
 
-- Worked on the Swift tutorial and completed Section 5(Create an algorithm for badges)
+- Worked through the Swift tutorial and completed Section 5: "Create an Algorithm for Badges"
 - Used GitHub Copilot in Xcode to generate unit tests for badge sorting logic.
 
 ### 🌐 Web Development
@@ -47,7 +47,7 @@ Example:
 - Deployed app on Cloudflare
 -->
 
-- Posted my weekly learning and development log on Dev.to📝
+- Posted my weekly dev log on Dev.to 📝
 
 ### 🔐 Security (TryHackMe)
 
@@ -57,13 +57,13 @@ Example:
 - Learned networking basics
 -->
 
-- Worked on AI Forensics Room (the AI Security Learning Path) on TryHackMe
+- Worked on the AI Forensics room (part of the AI Security Learning Path) on TryHackMe
 
 ---
 
 ## 💡 Key Takeaways
 
-- Reviewed how to build basic SwiftUI views using `NavigationStack`, `ScrollView`, and `HStack`
+- Reviewed the basics of building SwiftUI views using `NavigationStack`, `ScrollView`, and `HStack`
 - Learned how to integrate AI-assisted code generation into the testing workflow.
 
 ### TryHackMe Learning
@@ -81,7 +81,7 @@ Example:
 
 - Continue working on the badge algorithm (Section 6) in the SwiftUI tutorial
 - Continue posting small articles on Dev.to
-- Continue working on the AI security Learning Path
+- Continue working on the AI Security Learning Path
 
 ## 🌈 Goals for This Year
 
