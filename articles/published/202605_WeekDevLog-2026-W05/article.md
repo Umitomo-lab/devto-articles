@@ -19,7 +19,7 @@ beginners, devjournal, webdev, swift , security
 
 - Made a little more progress in the SwiftUI tutorial.
 - Started researching web application technology stacks and creating a roadmap for my long-term goals. I'm moving forward little by little.
-- Completed the AI Forensics room from the AI Security Learning Path this week.
+- Completed the AI Forensics room from the AI Security Learning Path on TryHackMe this week.
 
 ---
 
