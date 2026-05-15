@@ -1,6 +1,6 @@
 ---
 title: Weekly Dev Log 2026-W05
-published: false
+published: True
 description: Weekly learning log of iOS, web development, and cybersecurity — 2026-W05
 tags: beginners, devjournal, security, swift
 series:
@@ -18,7 +18,7 @@ beginners, devjournal, webdev, swift , security
 ## 🗓️ This Week
 
 - Made a little more progress in the SwiftUI tutorial.
-- Started researching web application technology stacks and creating a roadmap for my long-term goals. I'm moving forward little by little.
+- Started researching web technology stacks and creating a roadmap to gradually turn my current blog into a portfolio site using React Router v7. I'm moving forward little by little.
 - Completed the AI Forensics room from the AI Security Learning Path on TryHackMe this week.
 
 ---
