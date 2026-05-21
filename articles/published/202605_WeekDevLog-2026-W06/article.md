@@ -17,9 +17,9 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
-- Made a little more progress in the SwiftUI tutorial.
-- Started the journey of building my future portfolio site. First, I created the project files and set up a repository on GitHub. I also started reserching React Router v7 by reading its documentation. I'm moving forward little by little
-- Completed the ContAInment room from the AI Security Learning Path on TryHackMe this week.
+- Made a little more progress in the SwiftUI tutorial🦾
+- Started the journey of building my future portfolio site✈️ First, I created the project files and set up a repository on GitHub. I also started reserching React Router v7 by reading its documentation. I'm moving forward little by little🔥
+- Completed the ContAInment room from the AI Security Learning Path on TryHackMe this week🤖
 
 ---
 
