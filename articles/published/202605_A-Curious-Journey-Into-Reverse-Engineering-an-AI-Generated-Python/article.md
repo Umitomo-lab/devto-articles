@@ -261,13 +261,18 @@ var e=Object.create,t=Object.defineProperty,...
 
 At first, it felt almost impossible to read.
 
-Later, I realized:
+The extracted JavaScript was difficult to understand, and I could not initially tell what kind of frontend structure had originally existed before packaging.
 
-- This was a production React/Vite bundle
-- The original `src/` files were not included
-- Only the compiled `dist/` output remained
+By combining:
 
-That was an important learning moment for me.
+- The extracted dist/ directory structure
+- The bundled JavaScript files
+- API communication behavior observed in the browser developer tools
+- And explanations generated through conversations with AI
+
+I gradually started to understand how the frontend had likely been packaged and bundled, and that the application was probably using a modern frontend workflow similar to React/Vite.
+
+At the same time, I also realized that the original frontend source structure itself was no longer included inside the executable.
 
 The actual development project probably looked something like this:
 
@@ -341,26 +346,6 @@ That process itself was one of the most exciting parts of the experience.
 
 ---
 
-## Production Frontend Bundles Are Extremely Difficult to Understand
-
-One of the biggest challenges was analyzing the frontend.
-
-Without the original source structure:
-
-```text
-src/
-components/
-hooks/
-```
-
-understanding the actual UI behavior became extremely difficult.
-
-The built frontend bundle had already been optimized and compressed for browsers, not for humans trying to understand how the application worked internally.
-
-This made me realize how heavily modern frontend development depends on the original project structure and source organization.
-
----
-
 ## “Working Software” and “Understandable Software” Are Different Things
 
 This experience also made me think deeply about AI-generated applications and software maintainability.
@@ -383,19 +368,5 @@ Especially in the age of AI-assisted development.
 This reverse engineering journey was honestly a lot of fun.
 
 What made the experience especially enjoyable was gradually reconstructing the application's architecture from small technical clues hidden inside the executable.
-
-Watching the structure slowly reveal itself step by step felt surprisingly rewarding:
-
-```text
-PyInstaller
-    ↓
-FastAPI
-    ↓
-localhost
-    ↓
-React/Vite
-    ↓
-PyMuPDF
-```
 
 At the same time, the experience gave me a deeper appreciation for software architecture, maintainability, and the importance of preserving understandable source code alongside AI-generated applications.
