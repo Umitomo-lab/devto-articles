@@ -197,8 +197,6 @@ pyi-archive_viewer PDF.exe
 
 This helped confirm that the executable had been packaged using PyInstaller and allowed me to inspect the internal archive structure.
 
-At that point, I realized the next step was not traditional disassembly, but extracting the packaged contents themselves.
-
 ---
 
 ## Step 3 — Analyzing `.pyc` Files
@@ -212,9 +210,9 @@ pycdas
 
 to inspect the extracted Python bytecode files.
 
-However, because the executable appeared to be built with Python 3.13, full decompilation support was still incomplete.
+However, when running `pycdc`, I noticed that some parts of the bytecode could not be fully reconstructed.
 
-For example, pycdc often produced partially reconstructed output like:
+In many cases, the output stopped after displaying messages like:
 
 ```text
 Unsupported opcode: CALL_KW (247)
