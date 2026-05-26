@@ -26,7 +26,7 @@ What started as simple curiosity quickly turned into an exciting journey of unco
 ## TL;DR
 
 - Reverse engineered a PyInstaller-based Python `.exe`
-- Discovered that the application was actually a local web app running on `localhost`
+- Reconstructed a surprisingly large portion of the application's architecture from the packaged `.exe`
 - Analyzed `.pyc` files using tools like `strings`, `pycdc`, and `pycdas`
 - Learned how React/Vite frontend assets can be bundled into a standalone executable
 - Realized how difficult production frontend bundles are to understand without the original source code
@@ -36,49 +36,27 @@ What started as simple curiosity quickly turned into an exciting journey of unco
 
 # What I Reverse Engineered
 
-As someone who works in IT administration and internal tooling, I became curious about how a coworker’s AI-generated desktop application was actually structured internally.
+As someone who works in IT administration and internal tooling, I often become curious about how applications are actually built under the hood.
 
-The application itself was a harmless PDF-processing utility built for local use, but I wanted to better understand:
+This time, a coworker showed me a PDF-processing desktop application that had been created with the help of generative AI.
 
-- What technologies were being used under the hood
-- Whether the executable was simply a packaged Python application
-- How modern AI-generated applications are architected
-- What maintainability and transparency look like in AI-assisted development
+The overall architecture had already been explained to me verbally beforehand.
+However, that led me to a simple but exciting question:
 
-I didn’t approach this from a malware-analysis perspective.
+> How much of an application's internal structure can actually be reconstructed just by reverse engineering the final `.exe` file?
 
-Instead, this became a technical exploration into how a modern Python-based desktop application could be packaged and delivered as a standalone `.exe`.
+That curiosity became the starting point of this exploration.
 
-At first, I assumed it was a traditional Windows desktop application.
+The application itself was a harmless internal utility designed for local use, and this investigation was performed purely within an authorized and educational context.
 
-However, while inspecting the executable, I noticed something interesting:
+Rather than trying to analyze malware or bypass protections, I wanted to understand:
 
-```text
-localhost:8000
-```
+- What information remains inside packaged executables
+- How modern Python applications are bundled
+- Whether frontend/backend structures could still be inferred after packaging
+- How much architectural detail could realistically be reconstructed from compiled artifacts alone
 
-That single clue completely changed my understanding of the application.
-
-Instead of being a traditional desktop GUI app, it turned out to be:
-
-```text
-React/Vite Frontend
-        ↓
-FastAPI Backend
-        ↓
-PyMuPDF / OpenCV
-        ↓
-PDF Processing
-```
-
-In other words, it was actually a local web application packaged into a Windows `.exe`.
-
-That realization made the reverse engineering process surprisingly exciting.
-
-> **Note:**
-> The application discussed in this article was an internally shared utility created for local use, and this exploration was performed purely for educational, architectural, and maintainability-learning purposes within an authorized context.
->
-> The goal was not malware analysis or bypassing protections, but rather understanding how modern AI-assisted applications are structured and packaged as standalone executables.
+What made the process especially exciting was slowly piecing together the architecture from small clues hidden inside the executable.
 
 ---
 
@@ -272,9 +250,9 @@ everything became compressed into optimized production assets.
 
 ---
 
-# What I Found
+# Reconstructing the Architecture
 
-The executable was essentially doing this:
+By combining clues from strings, embedded `.pyc` files, frontend assets, and API routes, I was eventually able to reconstruct a rough picture of the application's architecture:
 
 ```text
 PDF.exe
@@ -298,56 +276,64 @@ Instead:
 - React rendered the UI inside the browser
 - Python handled backend processing
 
-That architecture was fascinating to uncover.
+What fascinated me most was not simply discovering the architecture itself, but realizing how much of it could still be reconstructed purely from packaged artifacts.
 
 ---
 
 # What I Learned
 
-## Modern `.exe` Applications Can Actually Be Web Apps
+## Reverse Engineering Can Reveal More Than I Expected
 
-This was probably the biggest surprise.
+Before starting this experiment, I assumed that most of an application's architecture would disappear once everything had been packaged into a standalone .exe.
 
-Even though the application looked like a desktop app, internally it was:
+However, I was surprised by how many clues still remained inside the executable:
 
-- A local HTTP server
-- A React frontend
-- A browser-based UI
+- Python runtime artifacts
+- PyInstaller structures
+- Embedded .pyc files
+- Frontend build outputs
+- API routes
+- Localhost references
+- Technology-specific strings
+
+By connecting those small clues together step by step, I was able to reconstruct a surprisingly large portion of the application's overall architecture.
+
+That process itself was one of the most exciting parts of the experience.
 
 ---
 
-## Build Outputs Are Extremely Hard to Read
+## Production Frontend Bundles Are Extremely Difficult to Understand
 
-Without the original source code:
+One of the biggest challenges was analyzing the frontend.
 
-```text
+Without the original source structure:
+
 src/
 components/
 hooks/
-```
 
-understanding frontend behavior becomes very difficult.
+understanding the actual UI behavior became extremely difficult.
 
-The production bundle was optimized for browsers, not humans.
+The built frontend bundle had already been optimized and compressed for browsers, not for humans trying to understand how the application worked internally.
+
+This made me realize how heavily modern frontend development depends on the original project structure and source organization.
 
 ---
 
 ## “Working Software” and “Understandable Software” Are Different Things
 
-This experience made me think deeply about AI-generated applications.
+This experience also made me think deeply about AI-generated applications and software maintainability.
 
-Generative AI can absolutely produce working software.
-However, maintainability becomes a serious concern when:
+Generative AI can absolutely help create working applications quickly.
+However, once only compiled artifacts remain, reconstructing the original design and development intent becomes much harder.
 
-- The original project structure is missing
-- Only compiled artifacts remain
-- The author themselves may not fully understand the generated architecture
+Even after reverse engineering the executable, I still could not fully reconstruct the original frontend source code or understand every implementation detail.
 
-Even after reverse engineering the executable, I still couldn’t fully reconstruct the original frontend source code or understand every implementation detail.
+That limitation itself became an important lesson for me.
 
-That experience itself became one of the biggest lessons for me.
+It reminded me that understanding software architecture and preserving maintainable source structures are just as important as making software work.
 
-It reminded me that modern software — especially AI-generated applications — can become very difficult to maintain or fully understand once only compiled artifacts remain.
+Especially in the age of AI-assisted development.
 
 ---
 
@@ -355,7 +341,9 @@ It reminded me that modern software — especially AI-generated applications —
 
 This reverse engineering journey was honestly a lot of fun.
 
-Watching the architecture slowly reveal itself step by step felt surprisingly exciting:
+What made the experience especially enjoyable was gradually reconstructing the application's architecture from small technical clues hidden inside the executable.
+
+Watching the structure slowly reveal itself step by step felt surprisingly rewarding:
 
 ```text
 PyInstaller
@@ -369,6 +357,4 @@ React/Vite
 PyMuPDF
 ```
 
-At the same time, it reminded me that understanding software architecture is just as important as making software work.
-
-Especially in the age of AI-generated code.
+At the same time, the experience gave me a deeper appreciation for software architecture, maintainability, and the importance of preserving understandable source code alongside AI-generated applications.
