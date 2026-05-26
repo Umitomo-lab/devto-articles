@@ -1,6 +1,6 @@
 ---
 title: A Curious Journey Into Reverse Engineering an AI-Generated Python .exe
-published: false
+published: True
 description: Exploring the inside of a PyInstaller-based Python `.exe` built with generative AI — from FastAPI and React/Vite to `.pyc` analysis and local web app architecture.
 tags: beginners, reversing, security, python
 series:
