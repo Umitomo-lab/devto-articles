@@ -86,12 +86,10 @@ After that, I recreated the environment successfully.
 
 ## Installing Basic Analysis Tools
 
-I installed several tools for inspecting the executable and Python bytecode:
+I installed a few basic tools for inspecting the executable and analyzing Python bytecode.
 
 ```bash
 pip install pyinstaller
-pip install uncompyle6
-pip install decompyle3
 ```
 
 I also installed `binutils` so I could use `strings`:
@@ -133,6 +131,40 @@ which I later used to inspect Python bytecode files.
 
 ---
 
+## Extracting the PyInstaller Executable
+
+After confirming the executable was likely packaged with PyInstaller, I used `pyinstxtractor` to extract its contents:
+
+```bash
+git clone https://github.com/extremecoders-re/pyinstxtractor.git
+```
+
+Then:
+
+```bash
+cd ~/reverse/pdf_exe
+
+python ~/reverse/pyinstxtractor/pyinstxtractor.py PDF.exe
+```
+
+This generated a directory like:
+
+```text
+PDF.exe_extracted/
+```
+
+Inside the extracted directory, I was finally able to inspect files such as:
+
+```text
+app.pyc
+pdf_stamp_processor.pyc
+pdf-stamp-frontend/dist
+```
+
+This was the point where the application's overall structure started becoming much clearer.
+
+---
+
 # How I Reverse Engineered It
 
 ## Step 1 — Running `strings`
@@ -148,7 +180,7 @@ Very quickly, I noticed Python-related strings:
 ```text
 python313.dll
 pyi-python-flag
-PyInstaller
+...
 ```
 
 This strongly suggested that the application had been packaged using PyInstaller.
@@ -163,20 +195,9 @@ Next, I used:
 pyi-archive_viewer PDF.exe
 ```
 
-That revealed embedded `.pyc` files and frontend assets.
+This helped confirm that the executable had been packaged using PyInstaller and allowed me to inspect the internal archive structure.
 
-I found things like:
-
-```text
-app.pyc
-pdf_stamp_processor.pyc
-pdf-stamp-frontend/dist
-```
-
-At that point, I realized the application contained both:
-
-- A Python backend
-- A built frontend bundle
+At that point, I realized the next step was not traditional disassembly, but extracting the packaged contents themselves.
 
 ---
 
@@ -189,11 +210,31 @@ pycdc
 pycdas
 ```
 
-to inspect Python bytecode files.
+to inspect the extracted Python bytecode files.
 
-Although Python 3.13 compatibility was incomplete, I could still reconstruct large parts of the backend structure.
+However, because the executable appeared to be built with Python 3.13, full decompilation support was still incomplete.
 
-I discovered:
+For example, pycdc often produced partially reconstructed output like:
+
+```text
+Unsupported opcode: CALL_KW (247)
+from fastapi import FastAPI, File, UploadFile, Form, HTTPException
+...
+# WARNING: Decompyle incomplete
+```
+
+Instead of fully recovering the original source code, I had to combine multiple fragmented clues together:
+
+- Partial pycdc output
+- pycdas disassembly output
+- Extracted strings
+- Module names
+- API route names
+- Library imports
+
+I also used generative AI to help interpret and organize those fragmented technical details while reconstructing the application's architecture.
+
+Even with incomplete reconstruction, I was still able to identify:
 
 - FastAPI routes
 - PDF processing logic
@@ -284,13 +325,13 @@ What fascinated me most was not simply discovering the architecture itself, but 
 
 ## Reverse Engineering Can Reveal More Than I Expected
 
-Before starting this experiment, I assumed that most of an application's architecture would disappear once everything had been packaged into a standalone .exe.
+Before starting this experiment, I assumed that most of an application's architecture would disappear once everything had been packaged into a standalone `.exe`.
 
 However, I was surprised by how many clues still remained inside the executable:
 
 - Python runtime artifacts
 - PyInstaller structures
-- Embedded .pyc files
+- Embedded `.pyc` files
 - Frontend build outputs
 - API routes
 - Localhost references
@@ -308,9 +349,11 @@ One of the biggest challenges was analyzing the frontend.
 
 Without the original source structure:
 
+```text
 src/
 components/
 hooks/
+```
 
 understanding the actual UI behavior became extremely difficult.
 
