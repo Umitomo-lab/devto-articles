@@ -53,7 +53,7 @@ At first, I assumed it was a traditional Windows desktop application.
 
 However, while inspecting the executable, I noticed something interesting:
 
-```text id="dk5h14"
+```text
 localhost:8000
 ```
 
@@ -61,7 +61,7 @@ That single clue completely changed my understanding of the application.
 
 Instead of being a traditional desktop GUI app, it turned out to be:
 
-```text id="rl9v7v"
+```text
 React/Vite Frontend
         ↓
 FastAPI Backend
@@ -88,7 +88,7 @@ Since I was using Kali Linux on WSL for this experiment, I first prepared a smal
 
 ## Creating a Python Virtual Environment
 
-```bash id="nx5u7o"
+```bash
 mkdir -p ~/reverse
 cd ~/reverse
 
@@ -98,7 +98,7 @@ source venv/bin/activate
 
 At first, the virtual environment failed because `python3-venv` was missing:
 
-```bash id="zkz2yr"
+```bash
 sudo apt install python3.13-venv
 ```
 
@@ -110,7 +110,7 @@ After that, I recreated the environment successfully.
 
 I installed several tools for inspecting the executable and Python bytecode:
 
-```bash id="eb84r9"
+```bash
 pip install pyinstaller
 pip install uncompyle6
 pip install decompyle3
@@ -118,7 +118,7 @@ pip install decompyle3
 
 I also installed `binutils` so I could use `strings`:
 
-```bash id="9r5p13"
+```bash
 sudo apt install binutils
 ```
 
@@ -128,7 +128,7 @@ sudo apt install binutils
 
 To inspect `.pyc` files more deeply, I built `pycdc` from source:
 
-```bash id="pyv30q"
+```bash
 sudo apt install -y cmake g++ git
 
 mkdir -p ~/reverse/tools
@@ -146,7 +146,7 @@ make -j4
 
 This generated:
 
-```text id="4t9mh7"
+```text
 pycdc
 pycdas
 ```
@@ -161,13 +161,13 @@ which I later used to inspect Python bytecode files.
 
 I first started with:
 
-```bash id="o4txws"
+```bash
 strings PDF.exe
 ```
 
 Very quickly, I noticed Python-related strings:
 
-```text id="4j8x85"
+```text
 python313.dll
 pyi-python-flag
 PyInstaller
@@ -181,7 +181,7 @@ This strongly suggested that the application had been packaged using PyInstaller
 
 Next, I used:
 
-```bash id="g74d4k"
+```bash
 pyi-archive_viewer PDF.exe
 ```
 
@@ -189,7 +189,7 @@ That revealed embedded `.pyc` files and frontend assets.
 
 I found things like:
 
-```text id="84dctv"
+```text
 app.pyc
 pdf_stamp_processor.pyc
 pdf-stamp-frontend/dist
@@ -206,7 +206,7 @@ At that point, I realized the application contained both:
 
 I then used:
 
-```bash id="27e5ut"
+```bash
 pycdc
 pycdas
 ```
@@ -224,7 +224,7 @@ I discovered:
 - Automatic browser launching
 - Local API endpoints such as:
 
-```text id="d7l5v2"
+```text
 /api/scan
 /api/stamp_and_merge
 /api/shutdown
@@ -238,7 +238,7 @@ The frontend bundle was much harder to understand.
 
 The built JavaScript looked like this:
 
-```js id="rqf23l"
+```js
 var e=Object.create,t=Object.defineProperty,...
 ```
 
@@ -254,7 +254,7 @@ That was an important learning moment for me.
 
 The actual development project probably looked something like this:
 
-```text id="h3glad"
+```text
 frontend/
 ├─ src/
 ├─ components/
@@ -264,7 +264,7 @@ frontend/
 
 But after building the frontend:
 
-```bash id="tpk3es"
+```bash
 npm run build
 ```
 
@@ -276,7 +276,7 @@ everything became compressed into optimized production assets.
 
 The executable was essentially doing this:
 
-```text id="e7khxu"
+```text
 PDF.exe
     ↓
 Launch FastAPI server
@@ -320,7 +320,7 @@ Even though the application looked like a desktop app, internally it was:
 
 Without the original source code:
 
-```text id="a7ex14"
+```text
 src/
 components/
 hooks/
@@ -357,7 +357,7 @@ This reverse engineering journey was honestly a lot of fun.
 
 Watching the architecture slowly reveal itself step by step felt surprisingly exciting:
 
-```text id="yqqqrx"
+```text
 PyInstaller
     ↓
 FastAPI
