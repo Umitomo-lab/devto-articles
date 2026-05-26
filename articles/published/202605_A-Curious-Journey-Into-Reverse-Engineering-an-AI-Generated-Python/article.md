@@ -274,24 +274,6 @@ I gradually started to understand how the frontend had likely been packaged and 
 
 At the same time, I also realized that the original frontend source structure itself was no longer included inside the executable.
 
-The actual development project probably looked something like this:
-
-```text
-frontend/
-├─ src/
-├─ components/
-├─ package.json
-└─ vite.config.js
-```
-
-But after building the frontend:
-
-```bash
-npm run build
-```
-
-everything became compressed into optimized production assets.
-
 ---
 
 # Reconstructing the Architecture
