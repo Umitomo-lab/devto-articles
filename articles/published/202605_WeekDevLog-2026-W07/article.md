@@ -17,11 +17,11 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
-- SwiftUI を2章分終わらせることができた🦾　チュートリアルを進めるにつれて、Swift UIの基礎知識が定着しているのを実感する。
-- It was my first time to posting a standalone article about reverse engineering! 興味のある方はぜひチェックしてみてね👇
+- Completed two more sections of the SwiftUI tutorial 🦾 As I continue working through the tutorial, I can feel my understanding of SwiftUI fundamentals becoming more solid🔥
+- It was my first time posting a standalone article about reverse engineering📝 If you're interested, feel free to check it out 👇
   {% link https://dev.to/umitomo-lab/a-curious-journey-into-reverse-engineering-an-ai-generated-python-exe-1n0b %}
-
-- I started criating my portfolio website UI design in Figma. サイト全体のUIの構造をざっくりとスケッチできた。ざっくりとしたUI構造は出来たが、なかなかモダンでスタイリッシュなデザインを作るのは難しいと感じた。(センスがないのを痛感した((笑))💦)　悩んでいたところで、Figma MCPについての記事をいくつか目にしたので、生成AIにUIデザイン案を出してもらうべく、Figma MCPについて調べていくことを決めた。
+- I started creating UI designs for my future portfolio website in Figma. I was able to roughly sketch out the overall structure of the site, but I also realized how difficult it is to create modern and stylish UI designs. (It really made me realize I don’t have much design sense yet 😂💦)<br>
+  While struggling with the design process, I came across several articles about Figma MCP. That made me interested in exploring how generative AI could help with UI design ideas, so I decided to start researching Figma MCP further.
 - Completed Securing AI Systems room from the AI Security Learning Path on TryHackMe this week🤖
 
 ---
@@ -34,11 +34,10 @@ beginners, devjournal, webdev, swift , security
 
 ## 🌐 Web Development
 
-- Posted my weekly dev log on Dev.to and a standalone article about my first attempt at reverse engineering📝
-
-- Created Web UI image in Figma
+- Posted my weekly dev log on Dev.to and a standalone article about my first attempt at reverse engineering 📝
+- Created rough portfolio website UI layouts in Figma
 - Used shadcn/ui component library design templates in Figma
-- Working on Learn UI Design in Figma (updated for UI3) (Community)
+- Started learning UI design in Figma using community resources
 
 ---
 
@@ -122,8 +121,8 @@ beginners, devjournal, webdev, swift , security
 # 🚀 Next Week
 
 - Complete the badge algorithm in the SwiftUI tutorial.
-- Continue posting small articles on Dev.to
-- Figma MCP を調べて、生成AIを使ってUIデザインをつくる方法に挑戦してみる
+- Continue posting small articles on Dev.to.
+- Explore Figma MCP and experiment with generating UI design ideas using AI.
 - Continue working on the AI Security Learning Path.
 
 ---
