@@ -17,12 +17,12 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
-- Completed two more sections of the SwiftUI tutorial 🦾 As I continue working through the tutorial, I can feel my understanding of SwiftUI fundamentals becoming more solid🔥
-- It was my first time posting a standalone article about reverse engineering📝 If you're interested, feel free to check it out 👇
+- Completed two more sections of the SwiftUI tutorial 🦾 As I continue working through the tutorial, I can feel my understanding of **SwiftUI fundamentals becoming more solid**🔥
+- It was **my first time posting a standalone article** about reverse engineering📝 If you're interested, feel free to check it out 👇
   {% link https://dev.to/umitomo-lab/a-curious-journey-into-reverse-engineering-an-ai-generated-python-exe-1n0b %}
-- I started creating UI designs for my future portfolio website in Figma. I was able to roughly sketch out the overall structure of the site, but I also realized how difficult it is to create modern and stylish UI designs. (It really made me realize I don’t have much design sense yet 😂💦)
-- While struggling with the design process, I came across several articles about Figma MCP. That made me interested in exploring how generative AI could help with UI design ideas, so I decided to start researching Figma MCP further.
-- Completed Securing AI Systems room from the AI Security Learning Path on TryHackMe this week🤖
+- **I started creating UI designs for my future portfolio website in Figma.** I was able to roughly sketch out the overall structure of the site, but I also realized **how difficult it is to create modern and stylish UI designs.** (It really made me realize I don’t have much design sense yet 😂💦)
+- While struggling with the design process, I came across several articles about **Figma MCP**. That made me interested in exploring how generative AI could help with UI design ideas, so **I decided to start researching Figma MCP further.**
+- Completed **Securing AI Systems** room from the AI Security Learning Path on TryHackMe this week🤖
 
 ---
 
@@ -83,7 +83,7 @@ beginners, devjournal, webdev, swift , security
 - Traditional apps use deterministic logic, while AI systems rely on probabilistic model inference.
 - AI systems accept free-form natural language, making input validation much harder.
 - Prompt Construction combines the system prompt, user input, and retrieved context before sending data to the LLM.
-- RAG allows LLMs to retrieve external knowledge from a vector store or other data sources.
+- **RAG** allows LLMs to retrieve external knowledge from a vector store or other data sources.
 - A vector store contains embedded representations of internal documentation for retrieval-augmented generation (RAG)
 - Trust boundaries are points where data moves between different security contexts.
 - Major trust boundaries include user-to-system, system-to-LLM, LLM-to-tools, and system-to-user.
@@ -93,9 +93,9 @@ beginners, devjournal, webdev, swift , security
 
 #### Task3 The AI Attack Surface
 
-- Studied the OWASP LLM Top 10 and how major risks affect AI-integrated systems.
-- Learned that MITRE ATLAS documents adversary tactics and exploitation techniques for AI systems.
-- Studied how the NIST AI RMF approaches AI security from a governance and risk management perspective.
+- Studied the **OWASP LLM Top 10** and how major risks affect AI-integrated systems.
+- Learned that **MITRE ATLAS** documents adversary tactics and exploitation techniques for AI systems.
+- Studied how **the NIST AI RMF** approaches AI security from a governance and risk management perspective.
 - Learned the difference between OWASP (vulnerabilities), ATLAS (attack techniques), and NIST AI RMF (risk governance).
 
 #### Task4 System-Level Threats
@@ -111,10 +111,10 @@ beginners, devjournal, webdev, swift , security
 
 - Learned that security controls are most effective when applied during the design stage of AI systems.
 - Learned that layered controls reduce the risk of end-to-end attack success.
-- Understood the importance of least privilege for AI tools, API tokens, and database access.
+- Understood **the importance of least privilege for AI tools, API tokens, and database access.**
 - Learned that write operations should require human approval before execution.
-- Studied how input and output validation reduce prompt injection and downstream injection risks.
-- Learned that MLSecOps integrates security throughout the AI and machine learning lifecycle.
+- Studied how input and output validation reduce **prompt injection** and downstream injection risks.
+- Learned that **MLSecOps** integrates security throughout the AI and machine learning lifecycle.
 
 ---
 
