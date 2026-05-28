@@ -20,8 +20,8 @@ beginners, devjournal, webdev, swift , security
 - Completed two more sections of the SwiftUI tutorial 🦾 As I continue working through the tutorial, I can feel my understanding of SwiftUI fundamentals becoming more solid🔥
 - It was my first time posting a standalone article about reverse engineering📝 If you're interested, feel free to check it out 👇
   {% link https://dev.to/umitomo-lab/a-curious-journey-into-reverse-engineering-an-ai-generated-python-exe-1n0b %}
-- I started creating UI designs for my future portfolio website in Figma. I was able to roughly sketch out the overall structure of the site, but I also realized how difficult it is to create modern and stylish UI designs. (It really made me realize I don’t have much design sense yet 😂💦)<br>
-  While struggling with the design process, I came across several articles about Figma MCP. That made me interested in exploring how generative AI could help with UI design ideas, so I decided to start researching Figma MCP further.
+- I started creating UI designs for my future portfolio website in Figma. I was able to roughly sketch out the overall structure of the site, but I also realized how difficult it is to create modern and stylish UI designs. (It really made me realize I don’t have much design sense yet 😂💦)
+- While struggling with the design process, I came across several articles about Figma MCP. That made me interested in exploring how generative AI could help with UI design ideas, so I decided to start researching Figma MCP further.
 - Completed Securing AI Systems room from the AI Security Learning Path on TryHackMe this week🤖
 
 ---
