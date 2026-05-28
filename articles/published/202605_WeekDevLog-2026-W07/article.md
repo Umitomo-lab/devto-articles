@@ -19,7 +19,7 @@ beginners, devjournal, webdev, swift , security
 
 - SwiftUI を2章分終わらせることができた🦾　チュートリアルを進めるにつれて、Swift UIの基礎知識が定着しているのを実感する。
 - It was my first time to posting a standalone article about reverse engineering! 興味のある方はぜひチェックしてみてね👇
-  https://dev.to/umitomo-lab/a-curious-journey-into-reverse-engineering-an-ai-generated-python-exe-1n0b
+  {% link https://dev.to/umitomo-lab/a-curious-journey-into-reverse-engineering-an-ai-generated-python-exe-1n0b %}
 
 - I started criating my portfolio website UI design in Figma. サイト全体のUIの構造をざっくりとスケッチできた。ざっくりとしたUI構造は出来たが、なかなかモダンでスタイリッシュなデザインを作るのは難しいと感じた。(センスがないのを痛感した((笑))💦)　悩んでいたところで、Figma MCPについての記事をいくつか目にしたので、生成AIにUIデザイン案を出してもらうべく、Figma MCPについて調べていくことを決めた。
 - Completed Securing AI Systems room from the AI Security Learning Path on TryHackMe this week🤖
