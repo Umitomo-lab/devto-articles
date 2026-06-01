@@ -83,7 +83,7 @@ Create a stylish portfolio website design.
 ```
 
 _(Screenshot of the generated Figma design)_
-![alt figma_design_created_codex]./assets/stylish_portfolio_example.png
+![alt text](./assets/stylish_portfolio_example.png, "AI_gnerated_Figma_design")
 
 _(Screenshot of the web page generated from the Figma design)_
 
