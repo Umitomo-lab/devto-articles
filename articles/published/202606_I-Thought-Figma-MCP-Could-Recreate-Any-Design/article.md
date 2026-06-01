@@ -86,7 +86,7 @@ _(Screenshot of the generated Figma design)_
 ![AI_gnerated_Figma_design](./assets/stylish_portfolio_example.png)
 
 _(Screenshot of the web page generated from the Figma design)_
-
+![Build_portfolio_using_figmadesign](./asset/build_portfolio_using_figmadesign.png)
 And honestly?
 
 The results were far better than I expected.
