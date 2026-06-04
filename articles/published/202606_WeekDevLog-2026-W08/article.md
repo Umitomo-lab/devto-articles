@@ -1,6 +1,6 @@
 ---
 title: Weekly Dev Log 2026-W08
-published: false
+published: True
 description: Weekly learning log of iOS, web development, and cybersecurity — 2026-W08
 tags: beginners, devjournal, security, swift
 series:
@@ -19,7 +19,7 @@ beginners, devjournal, webdev, swift , security
 
 - Completed one section of the SwiftUI tutorial 🦾 Since I want to continue through the tutorial until **I can build the app for testing and run it on an actual iPhone**, I’ll focus on that from next week.
 - I also wrote another standalone article this week. It was about **my experience experimenting with Codex and Figma MCP to see how much UI design work I could delegate to AI**📝 If you're interested, feel free to check it out 👇
-  <!--{% link https://dev.to/umitomo-lab/a-curious-journey-into-reverse-engineering-an-ai-generated-python-exe-1n0b %}-->
+
 - I’ll continue working steadily on my portfolio site design by combining AI-generated UI ideas with the official shadcn/ui Figma design template.
 - Completed **LLM Security** room from the AI Security Learning Path on TryHackMe this week🤖
 
