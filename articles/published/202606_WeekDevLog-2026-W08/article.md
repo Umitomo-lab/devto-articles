@@ -17,9 +17,9 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
-- Completed one section of the SwiftUI tutorial 🦾 Since I want to continue through the tutorial until I can build the app for testing and run it on an actual iPhone, I’ll focus on that from next week onward.
-- I also wrote another standalone article this week. It was about my experience experimenting with Codex and Figma MCP to see how much UI design work I could delegate to AI. 📝 If you're interested, feel free to check it out 👇
-  {% link https://dev.to/umitomo-lab/a-curious-journey-into-reverse-engineering-an-ai-generated-python-exe-1n0b %}
+- Completed one section of the SwiftUI tutorial 🦾 Since I want to continue through the tutorial until **I can build the app for testing and run it on an actual iPhone**, I’ll focus on that from next week.
+- I also wrote another standalone article this week. It was about **my experience experimenting with Codex and Figma MCP to see how much UI design work I could delegate to AI**📝 If you're interested, feel free to check it out 👇
+  <!--{% link https://dev.to/umitomo-lab/a-curious-journey-into-reverse-engineering-an-ai-generated-python-exe-1n0b %}-->
 - I’ll continue working steadily on my portfolio site design by combining AI-generated UI ideas with the official shadcn/ui Figma design template.
 - Completed **LLM Security** room from the AI Security Learning Path on TryHackMe this week🤖
 
@@ -71,7 +71,7 @@ beginners, devjournal, webdev, swift , security
 
 ### LLM Security
 
-#### Threat Categories
+### Threat Categories
 
 #### Data-Based Threats
 
@@ -97,18 +97,18 @@ beginners, devjournal, webdev, swift , security
 
 ### LLM Security Threat Cheat Sheet
 
-| Type         | Threat                                                | Target / Attack Surface                        | Input                                                              | Output                                                                              |
-| ------------ | ----------------------------------------------------- | ---------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
-| Data-Based   | Training Data Extraction                              | Training dataset (confidentiality)             | Crafted prompts designed to trigger memorised content              | Verbatim or near verbatim training data (text, PII, secrets)                        |
-| Data-Based   | Membership Inference                                  | Training dataset membership (privacy metadata) | Known candidate data sample already possessed by the attacker      | Yes/no (or probability) decision indicating whether the sample was used in training |
-| Data-Based   | Prompt Leakage / System Prompt Exposure (LLM07:2025)  | System prompt / developer instructions         | Prompts asking the model to reveal or reflect on its instructions  | Partial or full disclosure of hidden system or developer prompts                    |
-| Model-Based  | Weight Extraction (Model Stealing)                    | Model parameters (intellectual property)       | Large volumes of carefully chosen API queries                      | A surrogate or distilled model replicating the original model's behaviour           |
-| Model-Based  | Model Inversion                                       | Model's internal representations               | Unknown or partially known data, or model embeddings/outputs       | New training data or attributes reconstructed from the model                        |
-| System-Based | Context Window Poisoning (Prompt Injection)           | LLM context window (instruction hierarchy)     | Attacker controlled text embedded in input or retrieved content    | Altered behaviour, policy bypass, unintended actions                                |
-| System-Based | Context Overflow / Unbounded Consumption (LLM10:2025) | Context window size and system resources       | Excessively large prompts or documents                             | Truncated safeguards, degraded responses, or denial of service                      |
-| System-Based | Stateful Conversation Manipulation (Memory Poisoning) | Persistent conversation memory                 | Malicious statements intended to be stored as long term context    | Persistent misinformation or corrupted future responses                             |
-| User-Based   | LLM-Powered Social Engineering                        | Human cognition and decision-making            | Contextual or personal information used to craft persuasive output | Manipulated users (phishing success, fraud, coerced actions)                        |
-| User-Based   | Trust Exploitation / Misinformation (LLM09:2025)      | User trust and judgment                        | Confident but incorrect or maliciously framed prompts              | Users accepting false, unsafe, or harmful information                               |
+| Type             | Threat                                                    | Target / Attack Surface                        | Input                                                              | Output                                                                              |
+| ---------------- | --------------------------------------------------------- | ---------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| **Data-Based**   | **Training Data Extraction**                              | Training dataset (confidentiality)             | Crafted prompts designed to trigger memorised content              | Verbatim or near verbatim training data (text, PII, secrets)                        |
+| **Data-Based**   | **Membership Inference**                                  | Training dataset membership (privacy metadata) | Known candidate data sample already possessed by the attacker      | Yes/no (or probability) decision indicating whether the sample was used in training |
+| **Data-Based**   | **Prompt Leakage / System Prompt Exposure (LLM07:2025)**  | System prompt / developer instructions         | Prompts asking the model to reveal or reflect on its instructions  | Partial or full disclosure of hidden system or developer prompts                    |
+| **Model-Based**  | **Weight Extraction (Model Stealing)**                    | Model parameters (intellectual property)       | Large volumes of carefully chosen API queries                      | A surrogate or distilled model replicating the original model's behaviour           |
+| **Model-Based**  | **Model Inversion**                                       | Model's internal representations               | Unknown or partially known data, or model embeddings/outputs       | New training data or attributes reconstructed from the model                        |
+| **System-Based** | **Context Window Poisoning (Prompt Injection)**           | LLM context window (instruction hierarchy)     | Attacker controlled text embedded in input or retrieved content    | Altered behaviour, policy bypass, unintended actions                                |
+| **System-Based** | **Context Overflow / Unbounded Consumption (LLM10:2025)** | Context window size and system resources       | Excessively large prompts or documents                             | Truncated safeguards, degraded responses, or denial of service                      |
+| **System-Based** | **Stateful Conversation Manipulation (Memory Poisoning)** | Persistent conversation memory                 | Malicious statements intended to be stored as long term context    | Persistent misinformation or corrupted future responses                             |
+| **User-Based**   | **LLM-Powered Social Engineering**                        | Human cognition and decision-making            | Contextual or personal information used to craft persuasive output | Manipulated users (phishing success, fraud, coerced actions)                        |
+| **User-Based**   | **Trust Exploitation / Misinformation (LLM09:2025)**      | User trust and judgment                        | Confident but incorrect or maliciously framed prompts              | Users accepting false, unsafe, or harmful information                               |
 
 ### Key Takeaways
 
@@ -122,7 +122,7 @@ beginners, devjournal, webdev, swift , security
 
 # 🚀 Next Week
 
-- Complete the badge algorithm in the SwiftUI tutorial.
+- Work through the "Preparation for Distribution" section of the SwiftUI tutorial.
 - Continue posting small articles on Dev.to.
 - Explore Figma MCP and experiment with generating UI design ideas using AI.
 - Continue working on the AI Security Learning Path.
