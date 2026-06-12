@@ -49,7 +49,7 @@ beginners, devjournal, webdev, swift , security
 
 ## 📱 SwiftUI Learning
 
-### What I learned from testing an app on a real iPhone🔬
+### 🔬 What I learned from testing an app on a real iPhone
 
 - I need to connect my iPhone, choose it as the run destination, and configure Signing & Capabilities before running the app.
 - A unique Bundle Identifier is needed to identify the app.
@@ -60,7 +60,7 @@ beginners, devjournal, webdev, swift , security
 - The diary entries I create on the real iPhone are saved in the app’s local storage on the device.
 - The data is not automatically saved to my Apple Account or iCloud.
 
-### What I learned from organizing ideas for my first iOS app🦄
+### 🦄 What I learned from organizing ideas for my first iOS app
 
 - As a beginner developer, I should not try to build a large, market-ready app from the beginning.
 - Large apps usually include many hidden complexities, such as data management, user experience design, error handling, security, performance, and long-term maintenance.
