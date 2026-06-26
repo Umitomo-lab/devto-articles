@@ -17,12 +17,12 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
-- While reviewing the code for the minimum-feature iOS app that Codex implemented for ToneDrill, I started coming up with many ideas for small improvements.
-- When I first started building the iOS app, I thought it would be enough to recreate the web version I had casually built before. However, once the app started taking shape, I naturally began wanting to add more features and improve the design. At the same time, this is my first time building an iOS app, so I often do not know the best way to move forward. Human curiosity and ambition are interesting 😅.
-- Because of that, I discussed my ideas with ChatGPT, separated them into short-term tasks and medium- to long-term ideas, and organized a realistic development plan in Notion.
-- For now, I decided to focus on completing the minimum-feature version implemented by Codex. I changed the app layout from the default portrait orientation to landscape orientation and organized several UI ideas.
-- I reviewed the program that Codex implemented last week based on my Figma design.
-- I learned more about React Router v7 features and several CSS functions.
+- While reviewing the code for **the minimum-feature iOS app** that Codex implemented for **ToneDrill**, I started coming up with **many ideas for small improvements**💡.
+- When I first started building the iOS app, I thought **it would be enough to recreate the web version** I had casually built before. However, once the app started taking shape, I naturally began wanting to add **more features and improve the design**🌋. At the same time, this is **my first time building an iOS app**, so I often **do not know the best way to move forward**. Human curiosity and ambition are interesting 😅.
+- Because of that, I discussed my ideas with ChatGPT, **separated them into short-term tasks and medium- to long-term ideas**, and **organized a realistic development plan** in Notion🗃️.
+- For now, I decided to focus on **completing the minimum-feature version implemented by Codex**. I changed the app layout from the default portrait orientation to landscape orientation and organized several UI ideasideas🦾.
+- I **reviewed the program** that Codex implemented last week based on my Figma design.
+- I learned more about **React Router v7 features and several CSS functions**.
 - Worked on the **AI System Reconnaissance** room from the AI Security Learning Path on TryHackMe this week 🤖.
 
 ---
