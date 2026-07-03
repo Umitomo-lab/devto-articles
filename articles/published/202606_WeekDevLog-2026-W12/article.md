@@ -17,16 +17,18 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
-- 今週は、個人プロダクトに取り組める時間が少なかったが、iOSアプリ開発とWeb開発のプロダクトを少し前進できた。
-- 前進できた要因として、ChatGPT、Codexを利用して、効率よく取り組めた点にある。AIの便利さを実感した一週間であった。
-- 先週Xcodeで実装したthe minimum-featureのiOSアプリであるToneDrill miniのUI設計を固めていくことを進めた。
-- 先週は、Xcodeで最小機能で動くアプリの基本機能面についてわくわくしながら、実装していたが、今週からは、UIイメージ作りに集中した。
-- UIイメージの設計方法に悩んだが、AIと相談しながら、方針を決めた。今後も[この進め方](## 📱 iOS (SwiftUI))をベースに思った。
-- Web開発は、先週Codexに実装してもらったポートフォリオサイトのプログラムの処理について理解する作業が終わった。
-- Shadcn/uiについて、詳しく理解でき、その利便性について理解することができた。
-- TryHackMeの演習に取り組めなかったので、来週は取り組めるように頑張る。
+- I had less time to work on my personal projects this week, but I was still able to make some progress on both my iOS app and web development projects.
+- One reason I was able to keep moving forward was that I used ChatGPT and Codex to work more efficiently. This week reminded me how helpful AI can be for personal development projects.
+- I continued refining the UI direction for ToneDrill mini, the minimum-feature iOS app I implemented in Xcode last week.
+- Last week, I was excited to build the basic functionality of a working minimum-feature app in Xcode. This week, I shifted my focus to creating a clearer UI image for the app.
+- I was not sure how to approach the UI design at first, but after discussing it with AI, I decided on a direction. I would like to keep using [this approach](#ios-swiftui) as a base going forward.
+- For web development, I finished reviewing the implementation of the portfolio site that Codex created last week.
+- I gained a better understanding of shadcn/ui and realized how convenient it is for building consistent UI components.
+- I was not able to work on TryHackMe this week, so I would like to make time for it again next week.
 
 ---
+
+<a id="ios-swiftui"></a>
 
 ## 📱 iOS (SwiftUI)
 
@@ -37,15 +39,16 @@ beginners, devjournal, webdev, swift , security
 - At first, I considered organizing the design rules in a text file like `Design.md`, but I decided to organize them visually in Figma instead.
 - I organized the basic color structure, including background colors, text colors, button colors, and typography rules.
 
-### 🎸 ToneDrill miniのUIイメージ
+### 🎸 ToneDrill mini UI Image
 
-FigmaでUIデザインを作成する前の現在のToneDrill miniのUIイメージと今週CodexとFigmaで構築した今のところ暫定したUIイメージを紹介します。
-これからこのUIイメージでプログラムを作っていくことを考えてわくわくしています！
+Here are two UI images of ToneDrill mini: the current UI before creating the Figma design, and the temporary UI direction I created this week using Codex and Figma.
 
-_(現在のToneDrill miniのUIのスクリーンショット)_
+I am excited to start implementing the app based on this new UI image!
+
+_(Current ToneDrill mini UI screenshot)_
 ![ToneDrillmini_UIimage_now](./assets/ToneDrillmini_UIimage_now.png)
 
-_(今週決めたToneDrill miniのUIのスクリーンショット)_
+_(ToneDrill mini UI screenshot decided this week)_
 ![ToneDrillmini_UIimage_future](./assets/ToneDrillmini_UIimage_future.png)
 
 ---
@@ -59,7 +62,7 @@ _(今週決めたToneDrill miniのUIのスクリーンショット)_
 
 ## 🔐 Security (TryHackMe)
 
-- 今週は、取り組むことができなかった。(来週は、取り組めるように頑張りたい！)
+- I was not able to work on TryHackMe this week. I would like to make time for it again next week!
 
 ---
 
@@ -91,6 +94,9 @@ _(今週決めたToneDrill miniのUIのスクリーンショット)_
 
 # 🚀 Next Week
 
+- Finish organizing the Mini Design System for ToneDrill mini in Figma.
+- Organize the UI adjustment points for the portfolio site implemented by Codex in Notion, then start making small UI refinements.
+- Continue working on the AI Security Learning Path.
 - FigmaでToneDrill miniのa Mini Design Systemの整理を完了させる。
 - Codexに実装してもらったポートフォリオサイトのUIの微調整を行う為に、微調整箇所をNotionに整理する。UI微調整作業に着手する。
 - Continue working on the AI Security Learning Path.
