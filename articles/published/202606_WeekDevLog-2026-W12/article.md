@@ -80,7 +80,7 @@ _(ToneDrill mini UI screenshot decided this week)_
 
 ## 📱 SwiftUI Learning
 
-- I noticed that if I ask Codex to create UI designs each time without clear rules, the colors, spacing, and font sizes can easily become inconsistent.
+- I noticed that if I ask Codex to **create UI designs each time without clear rules**, the colors, spacing, and font sizes can **easily become inconsistent**.
 - I learned that it is better to create one **base UI design** first, then **organize the frame structure and Mini Design System** based on that design.
 - I also considered asking Codex to implement a SwiftUI prototype first and then adjusting it in Xcode, but I felt that **organizing the UI visually in Figma first** was easier for me to understand.
 - Having the UI structure and color roles visible in Figma made it easier to understand the design than organizing everything only in text.
