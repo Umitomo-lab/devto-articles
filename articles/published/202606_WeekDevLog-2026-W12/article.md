@@ -26,6 +26,16 @@ beginners, devjournal, webdev, swift , security
 - I gained a better understanding of **shadcn/ui** and realized how convenient it is for building consistent UI components.
 - I was not able to work on TryHackMe this week, so I would like to make time for it again next week.
 
+> I also want to thank everyone who commented on my previous [Weekly Dev Log 2026-W11](https://dev.to/umitomo-lab/weekly-dev-log-2026-w11-4ga6)✨
+>
+> Reading the comments on my previous Weekly Dev Log made me feel that I would also like to try writing standalone articles that go deeper into what I learned.
+>
+> I hope I can share my honest learning process and thoughts in different formats, not only through Weekly Dev Logs.
+>
+> Also, thank you so much for leaving positive comments on my personal, honest Weekly Dev Logs!
+>
+> I always appreciate your comments, so please feel free to leave one if you have any thoughts or feedback.
+
 ---
 
 <a id="ios-swiftui"></a>
@@ -38,16 +48,6 @@ beginners, devjournal, webdev, swift , security
 - I started **organizing a Mini Design System** based on that one screen so that future screens can have a consistent UI.
 - At first, I considered organizing the design rules in a text file like `Design.md`, but I decided to **organize them visually in Figma instead**.
 - I organized the basic color structure, including background colors, text colors, button colors, and typography rules.
-
-> I also want to thank everyone who commented on my previous [Weekly Dev Log 2026-W11](https://dev.to/umitomo-lab/weekly-dev-log-2026-w11-4ga6)✨
->
-> Reading the comments on my previous Weekly Dev Log made me feel that I would also like to try writing standalone articles that go deeper into what I learned.
->
-> I hope I can share my honest learning process and thoughts in different formats, not only through Weekly Dev Logs.
->
-> Also, thank you so much for leaving positive comments on my personal, honest Weekly Dev Logs!
->
-> I always appreciate your comments, so please feel free to leave one if you have any thoughts or feedback.
 
 ### 🎸 ToneDrill mini UI Image
 
