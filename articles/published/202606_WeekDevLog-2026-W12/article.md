@@ -17,24 +17,36 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
-- While reviewing the code for **the minimum-feature iOS app** that Codex implemented for **ToneDrill**, I started coming up with **many ideas for small improvements**💡.
-- When I first started building the iOS app, I thought **it would be enough to recreate the web version** I had casually built before. However, once the app started taking shape, I naturally began wanting to add **more features and improve the design**🌋. At the same time, this is **my first time building an iOS app**, so I often **do not know the best way to move forward**. Human curiosity and ambition are interesting 😅.
-- Because of that, I discussed my ideas with ChatGPT, **separated them into short-term tasks and medium- to long-term ideas**, and **organized a realistic development plan** in Notion🗃️.
-- For now, I decided to focus on **completing the minimum-feature version implemented by Codex**. I changed the app layout from the default portrait orientation to landscape orientation and organized several UI ideas🦾.
-- I **reviewed the program** that Codex implemented last week based on my Figma design.
-- I learned more about **React Router v7 features and several CSS functions**.
-- Worked on the **AI System Reconnaissance** room from the AI Security Learning Path on TryHackMe this week 🤖.
+- 今週は、個人プロダクトに取り組める時間が少なかったが、iOSアプリ開発とWeb開発のプロダクトを少し前進できた。
+- 前進できた要因として、ChatGPT、Codexを利用して、効率よく取り組めた点にある。AIの便利さを実感した一週間であった。
+- 先週Xcodeで実装したthe minimum-featureのiOSアプリであるToneDrill miniのUI設計を固めていくことを進めた。
+- 先週は、Xcodeで最小機能で動くアプリの基本機能面についてわくわくしながら、実装していたが、今週からは、UIイメージ作りに集中した。
+- UIイメージの設計方法に悩んだが、AIと相談しながら、方針を決めた。今後も[この進め方](## 📱 iOS (SwiftUI))をベースに思った。
+- Web開発は、先週Codexに実装してもらったポートフォリオサイトのプログラムの処理について理解する作業が終わった。
+- Shadcn/uiについて、詳しく理解でき、その利便性について理解することができた。
+- TryHackMeの演習に取り組めなかったので、来週は取り組めるように頑張る。
 
 ---
 
 ## 📱 iOS (SwiftUI)
 
-- Organized feature ideas I would like to add to ToneDrill in Notion and separated them into short-term tasks and medium- to long-term tasks.
-- Changed the app layout from the default portrait-oriented design to a landscape-oriented design.
-- Planned the next UI improvement for the app: replacing horizontal scrolling with left and right buttons to switch the visible fret range.
-- Explored a design direction for a SwiftUI-drawn guitar fretboard background before using a real image background.
-- Worked with ChatGPT to define the direction for a fretboard-style UI in SwiftUI, organized the required display elements, and prepared them as a specification for Codex.
-- Prepared a concrete Codex prompt for generating a Figma draft based on the design task document and reference image.
+- I used Codex and Figma to create the UI design for the minimum version of ToneDrill mini.
+- I asked Codex to generate several UI design ideas, then chose the one I liked and organized it as a design file in Figma.
+- ToneDrill mini will have multiple screens in the future, but I focused on designing only one main interaction screen first.
+- I started organizing a Mini Design System based on that one screen so that future screens can have a consistent UI.
+- At first, I considered organizing the design rules in a text file like `Design.md`, but I decided to organize them visually in Figma instead.
+- I organized the basic color structure, including background colors, text colors, button colors, and typography rules.
+
+### 🎸 ToneDrill miniのUIイメージ
+
+FigmaでUIデザインを作成する前の現在のToneDrill miniのUIイメージと今週CodexとFigmaで構築した今のところ暫定したUIイメージを紹介します。
+これからこのUIイメージでプログラムを作っていくことを考えてわくわくしています！
+
+_(現在のToneDrill miniのUIのスクリーンショット)_
+![ToneDrillmini_UIimage_now](./assets/ToneDrillmini_UIimage_now.png)
+
+_(今週決めたToneDrill miniのUIのスクリーンショット)_
+![ToneDrillmini_UIimage_future](./assets/ToneDrillmini_UIimage_future.png)
 
 ---
 
@@ -42,17 +54,12 @@ beginners, devjournal, webdev, swift , security
 
 - Posted my weekly dev log on Dev.to 📝.
 - Reviewed the structure of the portfolio home page created with React Router v7.
-- Checked how `root.tsx`, `routes.ts`, and `home.tsx` work together to render the top page.
-- Studied how the `loader` function passes page data to the home component.
-- Looked through `home-page-layout.tsx` and checked how the main area and profile sidebar are arranged.
-- Reviewed `app.css` to understand the layout, responsive design, and light/dark color settings.
-- Looked up `grid-template-columns`, `minmax()`, `clamp()`, and `@media` using MDN and ChatGPT.
 
 ---
 
 ## 🔐 Security (TryHackMe)
 
-- Worked on the AI System Reconnaissance room, part of the AI Security Learning Path on TryHackMe.
+- 今週は、取り組むことができなかった。(来週は、取り組めるように頑張りたい！)
 
 ---
 
@@ -60,48 +67,32 @@ beginners, devjournal, webdev, swift , security
 
 ## 📱 SwiftUI Learning
 
-- Learned how to configure an iOS app to support landscape orientation.
-- Learned how to adjust the UI layout so it fits neatly on the screen in landscape mode.
-- Learned that a SwiftUI-drawn fretboard background is a safer first step than placing buttons directly on top of a real guitar image.
-- Learned that building the fretboard UI with separate background and button layers will make it easier to replace the background with an image later.
-- Learned that Codex should first explain its planned Figma structure before actually creating or modifying the design.
-- Learned that giving Codex a task document, a reference image, and clear constraints helps reduce unexpected changes.
+- I noticed that if I ask Codex to create UI designs each time without clear rules, the colors, spacing, and font sizes can easily become inconsistent.
+- I learned that it is better to create one base UI design first, then organize the frame structure and Mini Design System based on that design.
+- I also considered asking Codex to implement a SwiftUI prototype first and then adjusting it in Xcode, but I felt that organizing the UI visually in Figma first was easier for me to understand.
+- Having the UI structure and color roles visible in Figma made it easier to understand the design than organizing everything only in text.
+- I learned that a visual design reference also makes it easier to imagine what needs to be changed after implementing the UI in SwiftUI.
+- For a personal iOS app like this, I felt that it is better to start with a small set of design rules based on one screen, rather than trying to build a large design system from the beginning.
 
 ---
 
 ## 🌐 Web Development Learning
 
-- Learned that `root.tsx` provides the base HTML layout, and child routes are rendered through `<Outlet />`.
-- Learned that `loader` prepares data before the page component is rendered.
-- Learned that `home-page-layout.tsx` mainly controls the page structure, while `app.css` controls most of the visual design.
-- Learned how CSS Grid is used to create a two-column layout with a flexible main area and a fixed-width sidebar.
-- Learned that `grid-template-columns` defines the width rules for each grid column.
-- Learned that `minmax()` sets the minimum and maximum size of a grid column.
-- Learned that `clamp()` lets a value change flexibly within a minimum and maximum range.
-- Learned that `@media` rules can be used for different CSS conditions. In this project, they are used to change the layout based on the screen width.
-- Learned how media queries change the layout from three-column cards to two columns, and then to one column on smaller screens.
-- Learned how CSS variables are used to manage colors for light mode, dark mode, and portfolio-specific design tokens.
-
----
-
-## 🔐 TryHackMe Learning
-
-### AI System Reconnaissance
-
-#### Task 2: The AI Infrastructure Stack
-
-- I learned that AI infrastructure is not just a single AI model or server, but a collection of specialized services that support the whole machine learning lifecycle.
-- I understood that AI systems often expose unfamiliar ports and APIs, so traditional network scanning alone may miss important AI-related services.
-- I learned that services such as model serving endpoints, experiment tracking tools, vector databases, model registries, Jupyter notebooks, MinIO, and Prometheus can all become important reconnaissance targets.
-- Although there were many new terms and I could not fully understand every single one, I was able to understand the main purpose of this task: building a mental map of AI infrastructure components and their common ports.
-- Through the exercise, I learned how to compare AI-specific ports with traditional service ports and identify which hosts are likely running AI infrastructure.
+- Learned that `sticky top-0` keeps the sidebar content visible near the top of the screen while scrolling.
+- Reviewed how Tailwind CSS utility classes are used to control layout in the profile sidebar.
+- Learned that `flex flex-wrap` is useful for arranging small elements naturally and letting them wrap when space is limited.
+- Learned that `flex` is better for content-sized inline groups, while `grid` is better for structured row-and-column layouts.
+- Reviewed the shadcn/ui `Button` component and learned that `asChild` lets a child element, such as an `<a>` tag, receive the button styles while keeping its original HTML meaning.
+- Rearned that this makes it possible to create a link that looks like a button, while still using the correct semantic element for navigation.
+- Reviewed the official shadcn/ui `Button` documentation and learned how `asChild`, `variant`, and `size` help create consistent button UI patterns.
+- Learned that shadcn/ui helps create consistent UI while allowing predefined design variations through component props, and its documentation makes it easy to understand how each prop affects the result.
 
 ---
 
 # 🚀 Next Week
 
-- Design the UI structure for the minimum-feature version of ToneDrill in Figma.
-- Finish reviewing the program that Codex implemented last week based on my Figma design and deepen my understanding of how the code works.
+- FigmaでToneDrill miniのa Mini Design Systemの整理を完了させる。
+- Codexに実装してもらったポートフォリオサイトのUIの微調整を行う為に、微調整箇所をNotionに整理する。UI微調整作業に着手する。
 - Continue working on the AI Security Learning Path.
 
 ---
