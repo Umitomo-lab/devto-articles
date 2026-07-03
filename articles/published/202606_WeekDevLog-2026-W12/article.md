@@ -17,14 +17,14 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
-- I had **less time to work on my personal projects** this week😅, but **I was still able to make some progress** on both my iOS app and web development projects🚼.
+- I had **less time to work on my personal projects** this week😅, but **I was still able to make some progress** on both my iOS app and web development projects.
 - One reason I was able to keep moving forward was that **I used ChatGPT and Codex to work more efficiently**. This week reminded me **how helpful AI can be for personal development projects**🦾.
 - I continued **refining the UI direction for ToneDrill mini**, the minimum-feature iOS app I implemented in Xcode last week.
 - Last week, I was excited to build the basic functionality of a working minimum-feature app in Xcode. This week, I shifted my focus to **creating a clearer UI image** for the app🎯.
 - I was not sure how to approach the UI design at first, but after discussing it with AI, I decided on a direction. I would like to keep using [this approach](#ios-swiftui) as a base going forward🐎.
 - For web development, I **finished reviewing the implementation of the portfolio site** that Codex created last week❤️‍🔥.
 - I gained a better understanding of **shadcn/ui** and realized how convenient it is for building consistent UI components.
-- I was not able to work on TryHackMe this week, so I would like to make time for it again next week.
+- I was **not able to work on TryHackMe this week**, so I would like to make time for it again next week🔥.
 
 > I also want to thank everyone who commented on my previous [Weekly Dev Log 2026-W11](https://dev.to/umitomo-lab/weekly-dev-log-2026-w11-4ga6)✨
 >
