@@ -17,13 +17,13 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
-- I had less time to work on my personal projects this week, but I was still able to make some progress on both my iOS app and web development projects.
-- One reason I was able to keep moving forward was that I used ChatGPT and Codex to work more efficiently. This week reminded me how helpful AI can be for personal development projects.
-- I continued refining the UI direction for ToneDrill mini, the minimum-feature iOS app I implemented in Xcode last week.
-- Last week, I was excited to build the basic functionality of a working minimum-feature app in Xcode. This week, I shifted my focus to creating a clearer UI image for the app.
-- I was not sure how to approach the UI design at first, but after discussing it with AI, I decided on a direction. I would like to keep using [this approach](#ios-swiftui) as a base going forward.
-- For web development, I finished reviewing the implementation of the portfolio site that Codex created last week.
-- I gained a better understanding of shadcn/ui and realized how convenient it is for building consistent UI components.
+- I had **less time to work on my personal projects** this week😅, but **I was still able to make some progress** on both my iOS app and web development projects🚼.
+- One reason I was able to keep moving forward was that **I used ChatGPT and Codex to work more efficiently**. This week reminded me **how helpful AI can be for personal development projects**🦾.
+- I continued **refining the UI direction for ToneDrill mini**, the minimum-feature iOS app I implemented in Xcode last week.
+- Last week, I was excited to build the basic functionality of a working minimum-feature app in Xcode. This week, I shifted my focus to **creating a clearer UI image** for the app🎯.
+- I was not sure how to approach the UI design at first, but after discussing it with AI, I decided on a direction. I would like to keep using [this approach](#ios-swiftui) as a base going forward🐎.
+- For web development, I **finished reviewing the implementation of the portfolio site** that Codex created last week❤️‍🔥.
+- I gained a better understanding of **shadcn/ui** and realized how convenient it is for building consistent UI components.
 - I was not able to work on TryHackMe this week, so I would like to make time for it again next week.
 
 ---
@@ -33,17 +33,27 @@ beginners, devjournal, webdev, swift , security
 ## 📱 iOS (SwiftUI)
 
 - I used Codex and Figma to create the UI design for the minimum version of ToneDrill mini.
-- I asked Codex to generate several UI design ideas, then chose the one I liked and organized it as a design file in Figma.
-- ToneDrill mini will have multiple screens in the future, but I focused on designing only one main interaction screen first.
-- I started organizing a Mini Design System based on that one screen so that future screens can have a consistent UI.
-- At first, I considered organizing the design rules in a text file like `Design.md`, but I decided to organize them visually in Figma instead.
+- I asked Codex to generate **several UI design ideas**, then chose the one I liked and **organized it as a design file in Figma**.
+- ToneDrill mini will have multiple screens in the future, but I focused on designing **only one main interaction screen** first.
+- I started **organizing a Mini Design System** based on that one screen so that future screens can have a consistent UI.
+- At first, I considered organizing the design rules in a text file like `Design.md`, but I decided to **organize them visually in Figma instead**.
 - I organized the basic color structure, including background colors, text colors, button colors, and typography rules.
+
+> I also want to thank everyone who commented on my previous [Weekly Dev Log 2026-W11](https://dev.to/umitomo-lab/weekly-dev-log-2026-w11-4ga6)✨
+>
+> Reading the comments on my previous Weekly Dev Log made me feel that I would also like to try writing standalone articles that go deeper into what I learned.
+>
+> I hope I can share my honest learning process and thoughts in different formats, not only through Weekly Dev Logs.
+>
+> Also, thank you so much for leaving positive comments on my personal, honest Weekly Dev Logs!
+>
+> I always appreciate your comments, so please feel free to leave one if you have any thoughts or feedback.
 
 ### 🎸 ToneDrill mini UI Image
 
-Here are two UI images of ToneDrill mini: the current UI before creating the Figma design, and the temporary UI direction I created this week using Codex and Figma.
+Here are **two UI images** of ToneDrill mini: the current UI before creating the Figma design, and the temporary UI direction I created this week using Codex and Figma🥰.
 
-I am excited to start implementing the app based on this new UI image!
+I am excited to start implementing the app based on this new UI image🔥
 
 _(Current ToneDrill mini UI screenshot)_
 ![ToneDrillmini_UIimage_now](./assets/ToneDrillmini_UIimage_now.png)
@@ -71,8 +81,8 @@ _(ToneDrill mini UI screenshot decided this week)_
 ## 📱 SwiftUI Learning
 
 - I noticed that if I ask Codex to create UI designs each time without clear rules, the colors, spacing, and font sizes can easily become inconsistent.
-- I learned that it is better to create one base UI design first, then organize the frame structure and Mini Design System based on that design.
-- I also considered asking Codex to implement a SwiftUI prototype first and then adjusting it in Xcode, but I felt that organizing the UI visually in Figma first was easier for me to understand.
+- I learned that it is better to create one **base UI design** first, then **organize the frame structure and Mini Design System** based on that design.
+- I also considered asking Codex to implement a SwiftUI prototype first and then adjusting it in Xcode, but I felt that **organizing the UI visually in Figma first** was easier for me to understand.
 - Having the UI structure and color roles visible in Figma made it easier to understand the design than organizing everything only in text.
 - I learned that a visual design reference also makes it easier to imagine what needs to be changed after implementing the UI in SwiftUI.
 - For a personal iOS app like this, I felt that it is better to start with a small set of design rules based on one screen, rather than trying to build a large design system from the beginning.
@@ -96,9 +106,6 @@ _(ToneDrill mini UI screenshot decided this week)_
 
 - Finish organizing the Mini Design System for ToneDrill mini in Figma.
 - Organize the UI adjustment points for the portfolio site implemented by Codex in Notion, then start making small UI refinements.
-- Continue working on the AI Security Learning Path.
-- FigmaでToneDrill miniのa Mini Design Systemの整理を完了させる。
-- Codexに実装してもらったポートフォリオサイトのUIの微調整を行う為に、微調整箇所をNotionに整理する。UI微調整作業に着手する。
 - Continue working on the AI Security Learning Path.
 
 ---
