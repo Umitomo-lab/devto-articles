@@ -17,29 +17,44 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
+- This week, I mainly focused on iOS development.
+- I also tested a small workflow using Codex: organizing ideas, creating a design file, and implementing a SwiftUI prototype. Through that process, I realized that Codex can be very helpful for making iOS development more efficient.
+- Until now, I had been using Codex in a rather ad hoc way, sending instructions only when I wanted it to handle a specific task.
+- This week, I started thinking about how to make that workflow more efficient, and how to make Codex act more like a development partner that understands the project in the same way I do.
+- As I explored this, I realized that I needed to review my Codex settings, build better rule files for giving instructions to Codex, and rethink how I use Codex in my own workflow.
+- Working through all of this slightly changed the way I think about AI agents.
+
 ---
 
 ## 📱 iOS (SwiftUI)
 
-- I used Codex and Figma to create the UI design for the minimum version of ToneDrill mini.
-- I asked Codex to generate **several UI design ideas**, then chose the one I liked and **organized it as a design file in Figma**.
-- ToneDrill mini will have multiple screens in the future, but I focused on designing **only one main interaction screen** first.
-- I started **organizing a Mini Design System** based on that one screen so that future screens can have a consistent UI.
-- At first, I considered organizing the design rules in a text file like `Design.md`, but I decided to **organize them visually in Figma instead**.
-- I organized the basic color structure, including background colors, text colors, button colors, and typography rules.
+- I organized the UI structure for ToneDrill mini in Figma.
+- I created a structured design page and a small Mini Design System in Figma.
+- I summarized colors, typography, buttons, fretboard parts, spacing, and radius rules.
+- I updated the implementation note so Codex could understand the design direction.
+- I asked Codex to implement the SwiftUI fretboard UI based on the Figma design and implementation note.
+- I changed the instruction so app colors would be managed as Color Sets in `Assets.xcassets`.
+- I reviewed the SwiftUI code for ToneDrill implemented by Codex.
+- I asked Codex questions to better understand the implementation.
+- I checked how the fretboard UI is drawn and updated in SwiftUI.
 
 ---
 
-## 🌐 Web Development
+## 🆙 Updating my workflow
 
-- Posted my weekly dev log on Dev.to 📝.
-- Reviewed the structure of the portfolio home page created with React Router v7.
+### 🤖 AI agent workflow
 
----
-
-## 🔐 Security (TryHackMe)
-
-- I was not able to work on TryHackMe this week. I would like to make time for it again next week!
+- I worked on setting up a more structured workflow for using Codex in my development projects.
+- I created a global `AGENTS.md` file for Codex (`~/.codex/AGENTS.md`).
+- I created a project-level `AGENTS.md` file at the root of the repository (`repo-root/AGENTS.md`).
+- I separated the responsibilities of the global `AGENTS.md` file and the project-level `AGENTS.md` file.
+- I created `docs/codex/TaskIndex.md` as a task management document. In it, I organized both immediate tasks and mid- to long-term tasks, and defined a consistent format for writing them down.
+- To reduce the need to repeatedly explain the project background, past work, and current tasks every time I move to a new chat, I decided to build a workflow and create a mid- to long-term project memory in Notion for the work and lessons I develop with Codex.
+- I created a Notion page called `AI Operating Manual` so AI can summarize the project overview, what I learned, mistakes, improvements, fixes, and any rules that should be added to the project-level `AGENTS.md`. I connected it through Notion MCP so Codex can update it.
+- I organized this entire process as a workflow.
+- At the start of a chat, Codex should read the `AI Operating Manual` Notion page, then read `AGENTS.md` and `TaskIndex.md`, so it can start working with the same understanding as me. I registered this as a Skill so I can call it with a single phrase.
+- At the end of a work session, Codex should summarize what was done and organize what should be saved as mid- to long-term project memory in the `AI Operating Manual` Notion page. I registered this as another Skill so I can call it with a single phrase.
+- Finally, I registered a separate Skill that can write the summarized content to the `AI Operating Manual` Notion page. I separated this from the summary Skill so that I can review the content first and decide what should actually be saved as mid- to long-term project memory before running the write operation.
 
 ---
 
@@ -47,31 +62,50 @@ beginners, devjournal, webdev, swift , security
 
 ## 📱 SwiftUI Learning
 
-- I noticed that if I ask Codex to **create UI designs each time without clear rules**, the colors, spacing, and font sizes can **easily become inconsistent**.
-- I learned that it is better to create one **base UI design** first, then **organize the frame structure and Mini Design System** based on that design.
-- I also considered asking Codex to implement a SwiftUI prototype first and then adjusting it in Xcode, but I felt that **organizing the UI visually in Figma first** was easier for me to understand.
-- Having the UI structure and color roles visible in Figma made it easier to understand the design than organizing everything only in text.
-- I learned that a visual design reference also makes it easier to imagine what needs to be changed after implementing the UI in SwiftUI.
-- For a personal iOS app like this, I felt that it is better to start with a small set of design rules based on one screen, rather than trying to build a large design system from the beginning.
+- By asking Codex to implement the SwiftUI UI based on the Figma UI structure and the small design system page, I was able to get a UI that was very close to the design I created in Figma.
+- I learned that Codex sometimes adds many custom style definitions in the code, even in areas where SwiftUI’s default styling system would be enough. I need to decide more carefully which parts should rely on SwiftUI’s default styles and which parts should be customized.
+- Through this implementation, I learned that I need to separate the parts where I want to take advantage of SwiftUI’s built-in default styles from the parts where I want to apply my own custom design.
+- I also noticed that Codex tends to implement SwiftUI previews using older syntax. This helped me understand the difference between older preview code and the newer style I learned in the SwiftUI tutorials.
+- I also learned that if I want colors to be managed in `Assets.xcassets`, I need to explicitly tell Codex to do that.
+- I learned that I should add rules for Codex so that the same kind of issue does not happen in the next implementation.
+- I learned how SwiftUI draws horizontal and vertical lines using `.frame(width:height:)` and `.position(x:y:)`.
+- I learned that `.position(x:y:)` places the center of a view.
+- I learned that a parent view’s `@State` change causes SwiftUI to recalculate the parent view’s body.
+- I learned that child views are updated when new values are passed from the parent view.
+- I learned that `@ViewBuilder` does not trigger UI updates by itself.
+- `@ViewBuilder` is used to write conditional view logic, such as showing or hiding a view depending on a condition.
 
 ---
 
-## 🌐 Web Development Learning
+## 🆙 Updating my workflow Learning
 
-- Learned that `sticky top-0` keeps the sidebar content visible near the top of the screen while scrolling.
-- Reviewed how Tailwind CSS utility classes are used to control layout in the profile sidebar.
-- Learned that `flex flex-wrap` is useful for arranging small elements naturally and letting them wrap when space is limited.
-- Learned that `flex` is better for content-sized inline groups, while `grid` is better for structured row-and-column layouts.
-- Reviewed the shadcn/ui `Button` component and learned that `asChild` lets a child element, such as an `<a>` tag, receive the button styles while keeping its original HTML meaning.
-- Rearned that this makes it possible to create a link that looks like a button, while still using the correct semantic element for navigation.
-- Reviewed the official shadcn/ui `Button` documentation and learned how `asChild`, `variant`, and `size` help create consistent button UI patterns.
-- Learned that shadcn/ui helps create consistent UI while allowing predefined design variations through component props, and its documentation makes it easy to understand how each prop affects the result.
+### 🤖 AI agent workflow
+
+#### 🐛 作業がどのように変化したか
+
+- Previously, I had to explain in each prompt who I am, how I prefer to work, and what kind of reasoning I expect from Codex. For example, I often had to explain my background and say things like, “Because I think this way, please do not do that.” By organizing this information in advance, I no longer need to repeat those explanations every time, and the direction of Codex’s responses is now much closer to what I expect.
+- I can now start talking with Codex about the task I want to work on right away, without wasting time aligning the process. Before, when I felt that Codex was moving in a slightly different direction, I had to explain the project background, current progress, and what I wanted to do next in order to bring Codex back to the same understanding.
+- By formatting the workflow, I no longer feel unsure about what information I should give Codex when working on any project. I created a system that lets Codex reach a consistent level of understanding with a minimal prompt. Because I also defined a clear way to operate Codex in order to protect that system, I feel that I can work with it more confidently and without hesitation.
+
+#### 📝 そこから何を学んだか
+
+- AI agentを効率的に動かす為には、AI agentに明確に私とは何か、私が好む行為はなにかを明示的に伝える必要があると感じた。
+- また、同時にAI agentに任せることと私が行うことを明確に定義することで、これらのワークフローが構築できると実感した。AI agentに、作業をいきなり行うのではなく、まずは作業予定内容を事前提案し、私(人間)がその内容に承認し実施するという流れです。
+- これは、会社の上司と部下の関係に似ていて、いわば、人間がAI agent を効率的に動かす為には、どれだけ有能な上司として振る舞えるかということが重要と感じた。なので、実社会の上司として仕事を管理するスキルが生かされると感じた。
+- AI agentとは別の単にツールとして利用するアプリケーションに関しては、どれだけそのアプリケーションを使いこなせるか、機能面の理解があるかなどがそのアプリケーションを上手く使う為に必要なスキルだと思う。
+- この求められるスキルの違いがこそが、AI agent固有のものだと感じ、単にツールとして利用するアプリケーションとの違いだと感じた。そこに、面白さを感じた。
+
+- I felt that in order to use an AI agent effectively, I need to clearly tell it who I am and what kinds of actions or workflows I prefer.
+- At the same time, I realized that this kind of workflow becomes possible when I clearly define what I will delegate to the AI agent and what I will handle myself. In my workflow, the AI agent should not immediately start working on a task. Instead, it should first propose a plan, and then I, as the human user, review and approve it before the task is executed.
+- This feels similar to the relationship between a manager and a team member. In other words, I felt that using an AI agent effectively depends on how well the human can act as a capable manager. I also realized that the skills used to manage work in real-world teams can be useful when working with AI agents.
+- For regular applications that are used simply as tools, the important skills are things like understanding the features and knowing how to use the application well.
+- I found it interesting that the skills needed for AI agents are different from the skills needed for ordinary tools. This difference feels like one of the unique characteristics of AI agents.
 
 ---
 
 # 🚀 Next Week
 
-- Finish organizing the Mini Design System for ToneDrill mini in Figma.
+- Continue developing the top menu screen for ToneDrill.
 - Organize the UI adjustment points for the portfolio site implemented by Codex in Notion, then start making small UI refinements.
 - Continue working on the AI Security Learning Path.
 
