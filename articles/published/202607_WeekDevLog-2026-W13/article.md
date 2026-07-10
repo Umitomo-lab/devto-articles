@@ -1,6 +1,6 @@
 ---
 title: Weekly Dev Log 2026-W13
-published: False
+published: True
 description: Weekly learning log of iOS, web development, and cybersecurity — 2026-W13
 tags: beginners, devjournal, webdev, swift
 series:
@@ -62,7 +62,7 @@ beginners, devjournal, webdev, swift , security
 
 ## 📱 SwiftUI Learning
 
-- By asking Codex to implement the SwiftUI UI based on the Figma UI structure and the small design system page, I was able to get a UI that was very close to the design I created in Figma.
+- **By asking Codex to implement the SwiftUI UI based on the Figma UI structure and the small design system page**, I was able to **get a UI that was very close to the design I created in Figma**.
 - I learned that **Codex sometimes adds many custom style definitions in the code**, even in areas where SwiftUI’s default styling system would be enough. I need to decide more carefully which parts should rely on **SwiftUI’s default styles** and which parts should be customized.
 - Through this implementation, I learned that I need to **separate the parts where I want to take advantage of SwiftUI’s built-in default styles from the parts where I want to apply my own custom design**.
 - I also noticed that **Codex tends to implement SwiftUI previews using older syntax**. This helped me understand the difference between older preview code and the newer style I learned in the SwiftUI tutorials.
@@ -84,7 +84,7 @@ beginners, devjournal, webdev, swift , security
 #### 🐛 How My Workflow Changed
 
 - Previously, I had to explain in each prompt who I am, how I prefer to work, and what kind of reasoning I expect from Codex. For example, I often had to explain my background and say things like, “Because I think this way, please do not do that.” By organizing this information in advance, **I no longer need to repeat those explanations every time, and the direction of Codex’s responses is now much closer to what I expect**.
-- I can now **start talking with Codex about the task I want to work on right away**, without wasting time aligning the process. Before, when I felt that Codex was moving in a slightly different direction, I had to explain the project background, current progress, and what I wanted to do next in order to bring Codex back to the same understanding.
+- I can now **start talking with Codex about the task I want to work on right away, without wasting time aligning the process**. Before, when I felt that Codex was moving in a slightly different direction, I had to explain the project background, current progress, and what I wanted to do next in order to bring Codex back to the same understanding.
 - By formatting the workflow, **I no longer feel unsure about what information I should give Codex when working on any project**. I created a system that lets Codex reach a consistent level of understanding with a minimal prompt. Because I also defined a clear way to operate Codex in order to protect that system, I feel that I can work with it more confidently and without hesitation.
 
 #### 📝 What I Learned From This
