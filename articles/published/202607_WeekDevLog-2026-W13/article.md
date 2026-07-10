@@ -81,19 +81,13 @@ beginners, devjournal, webdev, swift , security
 
 ### 🤖 AI agent workflow
 
-#### 🐛 作業がどのように変化したか
+#### 🐛 How My Workflow Changed
 
 - Previously, I had to explain in each prompt who I am, how I prefer to work, and what kind of reasoning I expect from Codex. For example, I often had to explain my background and say things like, “Because I think this way, please do not do that.” By organizing this information in advance, I no longer need to repeat those explanations every time, and the direction of Codex’s responses is now much closer to what I expect.
 - I can now start talking with Codex about the task I want to work on right away, without wasting time aligning the process. Before, when I felt that Codex was moving in a slightly different direction, I had to explain the project background, current progress, and what I wanted to do next in order to bring Codex back to the same understanding.
 - By formatting the workflow, I no longer feel unsure about what information I should give Codex when working on any project. I created a system that lets Codex reach a consistent level of understanding with a minimal prompt. Because I also defined a clear way to operate Codex in order to protect that system, I feel that I can work with it more confidently and without hesitation.
 
-#### 📝 そこから何を学んだか
-
-- AI agentを効率的に動かす為には、AI agentに明確に私とは何か、私が好む行為はなにかを明示的に伝える必要があると感じた。
-- また、同時にAI agentに任せることと私が行うことを明確に定義することで、これらのワークフローが構築できると実感した。AI agentに、作業をいきなり行うのではなく、まずは作業予定内容を事前提案し、私(人間)がその内容に承認し実施するという流れです。
-- これは、会社の上司と部下の関係に似ていて、いわば、人間がAI agent を効率的に動かす為には、どれだけ有能な上司として振る舞えるかということが重要と感じた。なので、実社会の上司として仕事を管理するスキルが生かされると感じた。
-- AI agentとは別の単にツールとして利用するアプリケーションに関しては、どれだけそのアプリケーションを使いこなせるか、機能面の理解があるかなどがそのアプリケーションを上手く使う為に必要なスキルだと思う。
-- この求められるスキルの違いがこそが、AI agent固有のものだと感じ、単にツールとして利用するアプリケーションとの違いだと感じた。そこに、面白さを感じた。
+#### 📝 What I Learned From This
 
 - I felt that in order to use an AI agent effectively, I need to clearly tell it who I am and what kinds of actions or workflows I prefer.
 - At the same time, I realized that this kind of workflow becomes possible when I clearly define what I will delegate to the AI agent and what I will handle myself. In my workflow, the AI agent should not immediately start working on a task. Instead, it should first propose a plan, and then I, as the human user, review and approve it before the task is executed.
