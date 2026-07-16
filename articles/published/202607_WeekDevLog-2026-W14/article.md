@@ -17,7 +17,7 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
-- After several gloomy weeks of rain, **summer suddenly arrived** in Japan, and it **lifted my mood**❤️‍🔥! At the same time, **work has been hot** in more ways than one💦, so I have been trying to **enjoy development** efficiently with **the limited time** I have😎.
+- After several gloomy weeks of rain, **summer suddenly arrived** in Japan, and **it lifted my mood**❤️‍🔥! At the same time, **work has been hot** in more ways than one💦, so I have been trying to **enjoy development** efficiently with **the limited time I have**😎.
 - This week, I worked on **designing the top menu screen for my iOS app** using the new workflow I built last week🐠.
 - I also **created rule files and a task management document for my portfolio website project** so that I can apply the same Codex workflow I built for iOS development to my web development project🌈.
 - Setting everything up took some effort, but now I can use a similar workflow for both iOS and web development, which made me feel much more organized🦾.
@@ -100,9 +100,9 @@ _(Figma Design)_
 
 ### 🐛 What I will do next
 
-- Since I am already \*familiar with Figma, I still find it easier to use in terms of both workflow and usability. However, Penpot appears to support many of the core features I need, so it could be a good option for personal projects like mine.
+- Since I am already familiar with Figma, I still find it easier to use in terms of both workflow and usability. However, Penpot appears to support many of the core features I need, so it could be a good option for personal projects like mine.
 - I considered switching from Figma to Penpot for the next screen in the ToneDrill project. However, **I have already established a basic workflow for creating designs and implementing them with Codex and Figma while working on the first screen**.
-- **Changing the workflow in the middle of the project could lead to unexpected issues and additional rework**. Therefore, **I decided to continue using Figma for the current ToneDrill project and focus on completing the app with the workflow I have already tested**.
+- **Changing the workflow in the middle of the project could lead to unexpected issues and additional rework**. Therefore, **I decided to continue using Figma for the current ToneDrill project** and focus on completing the app with the workflow I have already tested
 - Instead of introducing Penpot into ToneDrill immediately, I plan to create a separate small iOS project and use it to test a Penpot-based design and development workflow. I think it is more important to complete ToneDrill first and establish a reliable end-to-end workflow before experimenting with a different design tool.
 
 ---
