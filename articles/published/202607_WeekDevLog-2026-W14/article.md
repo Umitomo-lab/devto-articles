@@ -1,7 +1,7 @@
 ---
 title: Weekly Dev Log 2026-W14
 published: false
-description: Weekly learning log of iOS, web development, and cybersecurity — 2026-W13
+description: Weekly learning log of iOS, web development, and cybersecurity — 2026-W14
 tags: beginners, devjournal, webdev, swift
 series:
 canonical_url:
