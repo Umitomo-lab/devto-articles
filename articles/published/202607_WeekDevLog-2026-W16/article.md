@@ -18,7 +18,7 @@ beginners, devjournal, webdev, swift , security
 ## 🗓️ This Week
 
 - This week, I was able to **make a little more progress** on my personal **iOS development project**, continuing from last week❤️‍🔥.
-- By last week, I had finished implementing the main screen that is opened from the top menu. Based on that screen, I discussed **the game logic** for the single-note practice menu on the fretboard with **Codex**.
+- By last week, I had finished implementing the main screen that is opened from the top menu. Based on that screen, I **discussed the game logic** for the single-note practice menu on the fretboard with **Codex**.
 - I **enjoyed the process** of **starting with a rough idea** and gradually **turning it into** a more concrete **implementation plan**🦾.
 - For the first time, I asked **Codex** to **implement unit tests** for my SwiftUI project. As a result, I noticed that **the implementation style** was **different from** the testing approach I had **learned in Apple’s SwiftUI tutorials**🤔.
 - After looking into it, I found that **Codex** had used the older **XCTest** framework, so I revised the tests to use Swift **Testing**, which is easier for me to understand based on what I have learned so far.
