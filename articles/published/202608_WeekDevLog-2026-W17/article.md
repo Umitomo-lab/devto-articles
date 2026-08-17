@@ -17,7 +17,7 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
-- This is my first update in two weeks😂. I took **a long break** and enjoyed the summer with my family🎐.
+- This is my first update in **two weeks**😂. I **took a long break** and enjoyed the summer with my family🎐.
 - I was busy enjoying summer events, so I did not make much progress over the past two weeks. However, I was able to **make some progress on my iOS app**🐛.
 - Until now, **Note Practice mode** asked users to **find just one position for a given note on the guitar fretboard**. During my break, I changed it so that users now need to **find all matching note positions within the visible fret range**🎸.
 - With this update, the development of Note Practice mode is mostly complete. I have finally **finished developing one full practice mode**✨.
@@ -51,7 +51,7 @@ In the new version, the user also needs to find where the same note appears on t
 
 I also added a progress indicator that updates each time the user finds a correct position. Once all of the correct positions have been found, the app displays `Congratulations!` and moves on to the next question. This makes it easier for the user to see how many positions are still left to find before completing the question.
 
-#### Old Version
+#### 🎵 Old Version
 
 - Within a seven-fret range, the user only needed to find one position that matched the note shown in the question.
 - The app checked whether the selected position was correct or incorrect and provided feedback to the user.
@@ -60,7 +60,7 @@ _(Old version: Note Practice mode)_
 
 ![NotePracticeMode_Old](./assets/NotePracticeMode_Old.png)
 
-#### New Version
+#### 🎶 New Version
 
 - Within a seven-fret range, the user now needs to find every position that matches the note shown in the question.
 - The app still checks each answer and provides feedback, but the number of correct answers now increases each time the user finds a new correct position.
