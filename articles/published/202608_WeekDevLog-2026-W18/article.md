@@ -17,9 +17,9 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
-- We’ve still had plenty of hot days lately☀️, but there have also been some cooler days when it rains🌦️. It’s starting to feel like summer is slowly coming to an end🎇.
+- We’ve still had plenty of hot days lately, but there have also been some cooler days when it rains. It’s starting to feel like summer is slowly coming to an end🎇.
 
-- **Work has been quite busy recently**, and I haven’t been able to find as much time as I’d like for my own development projects💦. Because of that, it’s been about **two weeks since my last Weekly Dev Log update**.
+- **Work has been quite busy recently**, and I haven’t been able to find as much time as I’d like for my own development projects💦. Because of that, **it’s been about two weeks since my last Weekly Dev Log update**.
 
 - By my previous update, I had mostly finished **Note Practice**, the first practice mode in ToneDrill. So I’ve now started working on the next feature, **Chord Tone Practice**🦾.
 
@@ -41,13 +41,13 @@ beginners, devjournal, webdev, swift , security
 
 - Still, it turned out to be a useful detour because I was able to learn more about how the JavaScript code worked as well🐛.
 
-- Now that the basic game rules are settled, **the next step is to work on the UI**🔥. I’m looking forward to seeing how the practice mode feels once it starts taking shape on screen🤩.
+- Now that the basic game rules are settled, **the next step is to work on the UI**🔥. I’m looking forward to seeing how the practice mode feels once it starts taking shape on screen✨.
 
-- About a month ago, I was able to keep up with both development and my weekly Dev.to posts fairly consistently. Recently, though, work has been much busier, and there have been many days when **I haven’t been able to make as much progress as I wanted**.
+- About a month ago, I was able to keep up with both development and my weekly Dev.to posts fairly consistently. Recently, though, work has been much busier, and **there have been many days when I haven’t been able to make as much progress as I wanted**.
 
 - Still, I want to remember why I started doing this in the first place: because I enjoy **building things** and **learning things I didn’t know before**.
 
-- Rather than comparing myself too much with other amazing developers, I want to keep moving forward one step at a time at my own pace🌈. Lately, **I’ve been reminded again of how important that is**🌱.
+- Rather than comparing myself too much with other amazing developers, **I want to keep moving forward one step at a time at my own pace**🚶. Lately, **I’ve been reminded again of how important that is**🌱.
 
 ---
 
