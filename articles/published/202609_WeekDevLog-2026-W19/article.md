@@ -59,7 +59,7 @@ However, the information needed to answer each question is different. Note Pract
 
 _(Note Practice: finding all positions for a single note)_
 
-![Note Practice screen showing a Find E question](assets/note-practice-ui.png)
+![Note Practice screen showing a Find E question](./assets/note-practice-ui.png)
 
 #### 🎶 Chord Tone Practice
 
@@ -71,7 +71,7 @@ _(Note Practice: finding all positions for a single note)_
 
 _(Chord Tone Practice: finding three-note chord-tone sets)_
 
-![Chord Tone Practice screen showing Root, Quality, Pattern, and Progress](assets/chord-tone-practice-ui.png)
+![Chord Tone Practice screen showing Root, Quality, Pattern, and Progress](./assets/chord-tone-practice-ui.png)
 
 The biggest visible change is the header. Instead of showing only a target note, Chord Tone Practice separates **Root**, **Quality**, **Pattern**, and **Progress** into four groups. At the same time, I was able to keep the fretboard, fret-range display, answer area, and overall visual style consistent with Note Practice.
 
