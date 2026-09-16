@@ -17,6 +17,8 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
+- After all the hot weather we had up until last week, the days have suddenly turned much cooler. It finally feels like autumn is here🍂. Although I was busy this week, I think I was still able to use my time effectively and make steady progress on my iOS app📱.
+
 - Last week, I finished reviewing the basic game rules for **Chord Tone Practice** and wrote that my next step would be to work on the UI. So this week, I mainly focused on designing the Chord Tone Practice screens in Figma🎨.
 
 - One of my goals was to keep the basic practice experience consistent with **Note Practice**, which I had already designed and implemented earlier. The two modes share the same fretboard and basic screen structure, but Chord Tone Practice needs to display and manage more information because the player is looking for sets of three notes rather than a single note.
