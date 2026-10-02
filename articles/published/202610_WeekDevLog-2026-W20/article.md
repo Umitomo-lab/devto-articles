@@ -23,19 +23,15 @@ beginners, devjournal, webdev, swift , security
 
 - This week, I finally started implementing the backend logic for **Chord Tone Practice**, following the UI design work I completed in my previous update🎸.
 
-- I worked with Codex to implement the core models, calculation logic, and tests needed for the new practice mode. Since I had already spent time organizing the requirements and implementation plan beforehand, Codex was able to generate the initial implementation surprisingly quickly.
+- I worked with Codex to implement the core models, calculation logic, and tests for **Chord Tone Practice**. Since the requirements and implementation plan were already organized, the initial implementation was completed quite quickly.
 
-- After the implementation, I started reviewing the backend logic using the `ChordTonePracticeCalculatorTests` that Codex created during development. Rather than only checking whether the tests passed, I used them as a guide to understand how the Swift code actually worked.
+- I then reviewed the backend logic using the `ChordTonePracticeCalculatorTests` created during development, checking the official Swift documentation whenever I found something I did not fully understand.
 
-- Because this is still my first Swift app, I often stop and check the official Swift documentation when I come across syntax or concepts I do not fully understand. This week, that led me to learn more about things like enum protocols, sorting closures, value normalization, and actor isolation.
-
-- What I found interesting is that reviewing AI-generated code has become an important part of my Swift learning process. The implementation itself can be completed very quickly, but understanding why the code works still takes me much longer.
-
-- At the same time, I can already feel that this review process is becoming faster as I become more familiar with Swift. Code that would have taken me a long time to understand a few months ago is starting to feel much easier to follow now🌱.
+- It still takes me much longer to understand the generated code than to generate it, but that gap is gradually getting smaller as I learn more Swift.
 
 - I also had some time to continue the **AI Security Learning Path on TryHackMe** this week🔐. I worked on the **AI System Reconnaissance** room and learned how exposed components such as model registries, Jupyter notebooks, inference servers, and other AI-related services can reveal a much larger attack surface than a single exposed service might suggest.
 
-- Overall, this week felt less like simply adding a new feature and more like a combination of **implementation, code review, and learning**. I’m still moving slowly compared with how quickly Codex can generate the code, but I feel that the time I spend understanding it is gradually paying off.
+- Overall, this week felt less like simply adding a new feature and more like a combination of **implementation, code review, and learning**.
 
 ---
 
