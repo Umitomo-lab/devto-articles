@@ -29,14 +29,10 @@ beginners, devjournal, webdev, swift , security
 
 ## 📱 iOS (SwiftUI)
 
-- Completed a detailed review of every test in `ChordTonePracticeCalculatorTests.swift`.
-- Traced each test case into `ChordTonePracticeCalculator` and the related model types to understand the full calculation flow.
-- Verified how chord tones, interval labels, valid answer sets, and invalid submissions are calculated.
-- Reviewed the exhaustive test covering all **504 combinations** of root notes, chord qualities, patterns, and visible fret ranges.
-- Examined how the tests verify pattern availability, overlapping answer sets, reachable combinations, and fret-range transitions.
-- Reviewed how Swift Testing uses `@Suite`, `@Test`, `#expect`, and `#require` to organize tests and validate behavior.
-- Reviewed Swift collection operations and condition-checking APIs used throughout the implementation.
-- Learned how subset generation with bitmasks works.
+- Completed a detailed review of `ChordTonePracticeCalculatorTests.swift`, the test file for my **Chord Tone Practice** feature, which helps users practice locating chord tones on a guitar fretboard.
+- Traced the tests into `ChordTonePracticeCalculator`, the app's chord-tone calculation component, and its related models to understand how notes, interval labels, valid answer sets, and invalid submissions are handled.
+- Reviewed an exhaustive test covering **504 combinations** of root notes, chord qualities, patterns, and visible fret ranges, including checks for pattern availability, overlapping answers, reachable combinations, and fret-range transitions.
+- Studied Swift's standard collection APIs, condition checking, bitwise operations, and Swift Testing while reviewing the implementation.
 
 ---
 
@@ -52,71 +48,38 @@ beginners, devjournal, webdev, swift , security
 
 ## 📱 SwiftUI Learning
 
-### Understanding `answerSets()`
+### Collection transformations and combinations
 
-- `answerSets()` uses `compactMap` to convert each chord degree into a note name while removing any failed conversions. For example, C major with degrees `1-3-5` produces `["C", "E", "G"]`.
+- `map` applies a transformation to each element and returns the transformed results. `compactMap` also removes `nil` results, producing a collection of non-optional values.
+- `flatMap` applies a transformation that returns a sequence for each element, then concatenates those sequences into a single collection. If a transformation returns an empty array, that element contributes no values to the result.
+- `filter` keeps elements that satisfy a predicate, while `first(where:)` returns the first matching element as an optional value, or `nil` if none matches.
+- `zip` pairs the elements of two sequences in order and stops when the shorter sequence ends. For example, combining `[5, 4, 3]` and `["C", "E", "G"]` produces `(5, "C")`, `(4, "E")`, and `(3, "G")`.
+- `reduce` combines the elements of a sequence into one accumulated result using an initial value and a closure. It can also be used with `map` and `flatMap` to build combinations incrementally: extend each existing partial combination with each possible next element, then flatten the results.
+- `Set(values.map(\.id))` is one way to collect unique identifiers from a sequence, provided the identifiers conform to `Hashable`. Comparing the resulting count with the expected number can check whether the identifiers are distinct.
 
-- A `guard` statement compares the number of converted notes with the original number of degrees. If `compactMap` removed any failed conversion, the counts no longer match and the function returns `[]`.
+### Conditions, ordering, and Swift syntax
 
-- For each consecutive string group, `zip` pairs the selected strings with the target notes. For example, `[5, 4, 3]` paired with `["C", "E", "G"]` becomes `(5, C)`, `(4, E)`, and `(3, G)`.
+- `contains(_:)` checks whether a sequence contains an equal value; `contains(where:)` checks whether **at least one** element satisfies a predicate; `allSatisfy(_:)` checks whether **every** element does. `allSatisfy` returns `true` for an empty sequence.
+- A key-path expression such as `\.isEmpty` can be passed as a predicate when its type fits the method's requirements. For example, `groups.contains(where: \.isEmpty)` returns `true` if any inner collection is empty.
+- `sorted(by: >)` returns a new collection in descending order by specifying that larger values should come first. Unlike `sort(by:)`, it does not reorder the original array.
+- `guard` requires a condition to hold before execution continues; its `else` branch must transfer control out of the enclosing scope. It can help detect unexpected results, such as when `compactMap` produces fewer elements than the original collection.
+- The ternary operator (`condition ? a : b`), nil-coalescing operator (`??`), and compound assignment (`+=`) express conditional values, fallbacks, and updates concisely. A method reference such as `allowedValues.contains` can also be passed where a matching closure is expected.
 
-- `positions()` finds the corresponding `GuitarString`, searches the seven visible frets, and returns only the fret positions that match the target note.
+### Iteration, Swift Testing, and debugging
 
-- If any target string has no matching fret position, `contains(where: \.isEmpty)` rejects that string group.
-
-- When every string has at least one matching position, `cartesianProduct()` generates every valid combination. It uses `reduce` to repeatedly extend the combinations, while `map` creates the next set of partial combinations and `flatMap` merges the nested results into `[[FretPosition]]`.
-
-- Returning `[]` from the `flatMap` closure removes only the result for the current string group because an empty array contributes no elements to the flattened result.
-
-### Swift collection operations and conditions
-
-- `map` transforms every element in a collection.
-
-- `compactMap` transforms elements and removes any `nil` results.
-
-- `flatMap` transforms elements and flattens the nested results into a single collection.
-
-- `filter` keeps only elements that satisfy a predicate.
-
-- `first(where:)` searches from the beginning and returns the first matching element, or `nil` when no match exists.
-
-- `contains`, `contains(where:)`, and `allSatisfy` express different kinds of conditions: whether a collection contains a particular value, whether **any** element satisfies a predicate, or whether **every** element satisfies one. `allSatisfy` also returns `true` for an empty sequence.
-
-- `sorted(by: >)` returns a new array in descending order because the comparison closure says that a larger value should appear before a smaller one. It does not modify the original array.
-
-- `Set(positions.map(\.stringNumber))` removes duplicate string numbers. Comparing the resulting count with `3` verifies that three different strings were selected.
-
-### Iteration, testing, and debugging
-
-- I reviewed every test in `ChordTonePracticeCalculatorTests.swift`, following each test into `ChordTonePracticeCalculator` and its related models to understand how chord tones, interval labels, valid answer sets, and invalid submissions are calculated.
-
-- The exhaustive test covers **504 combinations** of root notes, chord qualities, patterns, and visible fret ranges. I examined how the tests check pattern availability, overlapping answer sets, reachable combinations, and fret-range transitions.
-
-- Swift Testing uses `@Suite` to group tests, `@Test` to identify test functions, and `#expect` and `#require` to check test conditions. Unlike a failed `#expect`, a failed `#require` stops the current test's execution by throwing an error.
-
-- `enumerated()` pairs each collection element with a zero-based offset.
-
-- Writing `(index, submission)` in a `for` loop destructures the tuple returned by `enumerated()` into the counter and the original element.
-
-- `#expect` is evaluated each time the loop reaches it. A failed expectation is recorded by Swift Testing, but it does not automatically stop the remaining loop iterations.
-
-- Storing a function result in a local variable before passing it to `#expect` makes debugging easier because the input and the calculated result can be inspected separately in Xcode.
-
-- LLDB commands such as `v value` and `po type(of: value)` are useful for inspecting runtime values and types. When evaluating closure expressions in LLDB, entering the expression on one line can make the command easier to execute.
-
-- `allCases` lists every case of a `CaseIterable` enum, `indices` provides the valid indices of a collection, and `enumerated()` provides offset-and-element pairs.
-
-- Swift features such as `guard`, the ternary operator (`condition ? a : b`), nil-coalescing (`??`), compound assignment (`+=`), key paths such as `\.count`, and method references such as `candidateSubset.contains` can make conditions and transformations more concise.
+- `CaseIterable` provides `allCases` for types that support enumerating their cases; `indices` provides a collection's valid indices; and `enumerated()` pairs elements with zero-based offsets. These offsets are not guaranteed to be the same as the collection's indices.
+- A loop such as `for (offset, element) in values.enumerated()` destructures each pair into its offset and element.
+- In Swift Testing, `@Test` marks a test function. Related tests can be grouped in a suite type; `@Suite` explicitly annotates the type and supports suite configuration, but is not required for a type containing tests to be recognized as a suite.
+- `#expect` records a failed expectation and allows the test to keep executing. `#require` records a failure and throws an error, preventing the current execution path from continuing when its requirement is not met. Both can be evaluated within loops.
+- Saving a calculated result in a local variable before checking it with `#expect` makes it easier to examine inputs and outputs separately during debugging.
+- In LLDB, commands such as `v value` and `po type(of: value)` help inspect values and types at runtime. Writing a closure-based expression on one line can make it easier to enter in the debugger.
 
 ### Generating subsets with bitmasks
 
-- A set containing `n` elements has `2ⁿ` possible subsets, including the empty subset and the full set.
-
-- Each integer from `0` through `2ⁿ - 1` can represent one subset as a binary bitmask.
-
-- `1 << index` creates a value with the bit at `index` turned on.
-
-- `mask & (1 << index)` checks whether that bit is present in the current mask. If the result is non-zero, the element at that index belongs to the current subset.
+- A collection of `n` distinct elements has `2ⁿ` subsets, including the empty subset and the full set.
+- Integers from `0` through `2ⁿ - 1` can represent these subsets using binary bitmasks, with one bit assigned to each element.
+- `1 << index` shifts the binary value `1` left by `index` positions to select a particular bit.
+- `mask & (1 << index)` performs a bitwise AND. A non-zero result means the selected bit is set, so the corresponding element belongs to that subset.
 
 ---
 
