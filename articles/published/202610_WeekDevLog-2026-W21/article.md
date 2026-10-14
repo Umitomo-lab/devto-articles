@@ -17,46 +17,34 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
-- It’s been **two weeks since my last update**. I had a long break of about five days, and here in Japan, it’s really starting to feel like autumn🍂. This time of year is perfect for picnics, so it’s been nice to enjoy the cooler weather.
+- The weather has finally become more comfortable here in Japan, and I've been feeling excited to get outside🍂. Recently, I took a spontaneous day trip to a small island and enjoyed the beautiful scenery filled with cosmos and other autumn flowers🌸.
 
-- I also planted some lavender seeds with my kids that we received at a local event, and they’ve just started to sprout recently🌱. It’s been fun checking on them together and watching them grow little by little.
+- On the development side, I finished reviewing the tests for **Chord Tone Practice** and followed the backend calculations step by step🎸. I also learned more about Swift's collection operations and how bitmasks can generate subsets.
 
-- This week, I finally started implementing the backend logic for **Chord Tone Practice**, following the UI design work I completed in my previous update🎸.
+- I completed the **AI System Reconnaissance** room on TryHackMe🔐, learning how to approach AI reconnaissance systematically and recognize signs of this activity in logs.
 
-- I worked with Codex to implement the core models, calculation logic, and tests for **Chord Tone Practice**. Since the requirements and implementation plan were already organized, the initial implementation was completed quite quickly.
-
-- I then reviewed the backend logic using the `ChordTonePracticeCalculatorTests` created during development, checking the official Swift documentation whenever I found something I did not fully understand.
-
-- It still takes me much longer to understand the generated code than to generate it, but that gap is gradually getting smaller as I learn more Swift.
-
-- I also had some time to continue the **AI Security Learning Path on TryHackMe** this week🔐. I worked on the **AI System Reconnaissance** room and learned how exposed components such as model registries, Jupyter notebooks, inference servers, and other AI-related services can reveal a much larger attack surface than a single exposed service might suggest.
-
-- Overall, this week felt less like simply adding a new feature and more like a combination of **implementation, code review, and learning**.
+- Overall, it was a week of **reviewing, understanding, and building confidence** in what I've already implemented.
 
 ---
 
 ## 📱 iOS (SwiftUI)
 
-- Implemented the core models for **Chord Tone Practice**, including chord qualities, chord-tone degrees, patterns, settings, and answer sets.
-- Added the calculation logic used to generate chord tones and valid three-note answer sets across consecutive strings.
-- Added Swift Testing coverage for note calculations, interval labels, answer matching, and invalid answer combinations.
-- Started reviewing the backend implementation using the `ChordTonePracticeCalculatorTests` generated during development.
-- Followed the test flow to understand how valid answer sets are created, normalized, and compared.
-- Reviewed how `sorted(by:)` works in Swift and how comparison closures determine the order of values.
-- Learned more about the different roles of `CaseIterable`, `Identifiable`, and `Hashable`.
-- Reviewed how `nonisolated` can be used for value models that do not depend on `MainActor`-isolated UI state.
+- Completed a detailed review of every test in `ChordTonePracticeCalculatorTests.swift`.
+- Traced each test case into `ChordTonePracticeCalculator` and the related model types to understand the full calculation flow.
+- Verified how chord tones, interval labels, valid answer sets, and invalid submissions are calculated.
+- Reviewed the exhaustive test covering all **504 combinations** of root notes, chord qualities, patterns, and visible fret ranges.
+- Examined how the tests verify pattern availability, overlapping answer sets, reachable combinations, and fret-range transitions.
+- Reviewed how Swift Testing uses `@Suite`, `@Test`, `#expect`, and `#require` to organize tests and validate behavior.
+- Reviewed Swift collection operations and condition-checking APIs used throughout the implementation.
+- Learned how subset generation with bitmasks works.
 
 ---
 
 ## 🔐 Security (TryHackMe)
 
-- Continued working on the **AI System Reconnaissance** room in the AI Security Learning Path.
-- Learned how separate findings can be connected to build a larger map of an AI system's attack surface.
-- Reviewed how exposed services such as MLflow, Jupyter notebooks, model registries, inference servers, and monitoring systems can reveal information about other parts of an AI environment.
-- Learned why model registries can be valuable reconnaissance targets because they may expose model names, versions, artifact locations, timestamps, and other metadata.
-- Studied AI supply chain risks, including exposed access tokens, external model sources, and poisoned dependencies.
-- Learned how reconnaissance techniques against AI systems can be mapped to **MITRE ATLAS**.
-- Reviewed the ShadowRay case study and how exposure of a single AI-related component could contribute to a much larger compromise.
+- Completed **Task 6: Structured Reconnaissance Methodology and Detection**.
+- Completed the **AI System Reconnaissance** room in the AI Security Learning Path.
+- Reviewed how reconnaissance can be organized into repeatable phases and how AI-specific reconnaissance activity can be detected through logs and monitoring data.
 
 ---
 
@@ -64,57 +52,97 @@ beginners, devjournal, webdev, swift , security
 
 ## 📱 SwiftUI Learning
 
-- Separating music-theory calculations from SwiftUI state makes the core logic easier to test and understand independently from the UI.
-- Automated tests are useful not only for checking whether code works, but also as a guide for understanding unfamiliar implementation logic.
-- `CaseIterable`, `Identifiable`, and `Hashable` may appear together on the same enum, but each provides a different capability.
-- `CaseIterable` provides `allCases`, which is useful when iterating through every possible enum case in tests or UI controls.
-- `Identifiable` provides stable identity for values used by SwiftUI components such as `ForEach`.
-- `Hashable` allows values to be used in collections such as `Set` and as dictionary keys.
-- A `sorted(by:)` closure does not directly move elements. Instead, it defines whether one value should appear before another.
-- Normalizing values into a consistent order makes it easier to compare logically identical answer sets even when the player selects notes in a different order.
-- `nonisolated` can be useful for pure value models that do not depend on actor-isolated UI state.
-- Reviewing AI-generated code while referring to the official Swift documentation is helping me gradually build a better understanding of Swift itself.
+### Understanding `answerSets()`
 
-## 🔐 TryHackMe Learning
+- `answerSets()` uses `compactMap` to convert each chord degree into a note name while removing any failed conversions. For example, C major with degrees `1-3-5` produces `["C", "E", "G"]`.
 
-- A single exposed AI-related service can reveal much more than information about that service alone.
-- AI systems can have a wider attack surface because many specialized services, tools, models, and external dependencies communicate with each other.
-- Reconnaissance becomes more meaningful when individual findings are connected into a larger picture of the system.
-- Model registries and other AI infrastructure can reveal useful metadata about an organization's models, environments, and dependencies.
-- AI reconnaissance techniques can be classified using frameworks such as MITRE ATLAS.
+- A `guard` statement compares the number of converted notes with the original number of degrees. If `compactMap` removed any failed conversion, the counts no longer match and the function returns `[]`.
+
+- For each consecutive string group, `zip` pairs the selected strings with the target notes. For example, `[5, 4, 3]` paired with `["C", "E", "G"]` becomes `(5, C)`, `(4, E)`, and `(3, G)`.
+
+- `positions()` finds the corresponding `GuitarString`, searches the seven visible frets, and returns only the fret positions that match the target note.
+
+- If any target string has no matching fret position, `contains(where: \.isEmpty)` rejects that string group.
+
+- When every string has at least one matching position, `cartesianProduct()` generates every valid combination. It uses `reduce` to repeatedly extend the combinations, while `map` creates the next set of partial combinations and `flatMap` merges the nested results into `[[FretPosition]]`.
+
+- Returning `[]` from the `flatMap` closure removes only the result for the current string group because an empty array contributes no elements to the flattened result.
+
+### Swift collection operations and conditions
+
+- `map` transforms every element in a collection.
+
+- `compactMap` transforms elements and removes any `nil` results.
+
+- `flatMap` transforms elements and flattens the nested results into a single collection.
+
+- `filter` keeps only elements that satisfy a predicate.
+
+- `first(where:)` searches from the beginning and returns the first matching element, or `nil` when no match exists.
+
+- `contains`, `contains(where:)`, and `allSatisfy` express different kinds of conditions: whether a collection contains a particular value, whether **any** element satisfies a predicate, or whether **every** element satisfies one. `allSatisfy` also returns `true` for an empty sequence.
+
+- `sorted(by: >)` returns a new array in descending order because the comparison closure says that a larger value should appear before a smaller one. It does not modify the original array.
+
+- `Set(positions.map(\.stringNumber))` removes duplicate string numbers. Comparing the resulting count with `3` verifies that three different strings were selected.
+
+### Iteration, testing, and debugging
+
+- I reviewed every test in `ChordTonePracticeCalculatorTests.swift`, following each test into `ChordTonePracticeCalculator` and its related models to understand how chord tones, interval labels, valid answer sets, and invalid submissions are calculated.
+
+- The exhaustive test covers **504 combinations** of root notes, chord qualities, patterns, and visible fret ranges. I examined how the tests check pattern availability, overlapping answer sets, reachable combinations, and fret-range transitions.
+
+- Swift Testing uses `@Suite` to group tests, `@Test` to identify test functions, and `#expect` and `#require` to check test conditions. Unlike a failed `#expect`, a failed `#require` stops the current test's execution by throwing an error.
+
+- `enumerated()` pairs each collection element with a zero-based offset.
+
+- Writing `(index, submission)` in a `for` loop destructures the tuple returned by `enumerated()` into the counter and the original element.
+
+- `#expect` is evaluated each time the loop reaches it. A failed expectation is recorded by Swift Testing, but it does not automatically stop the remaining loop iterations.
+
+- Storing a function result in a local variable before passing it to `#expect` makes debugging easier because the input and the calculated result can be inspected separately in Xcode.
+
+- LLDB commands such as `v value` and `po type(of: value)` are useful for inspecting runtime values and types. When evaluating closure expressions in LLDB, entering the expression on one line can make the command easier to execute.
+
+- `allCases` lists every case of a `CaseIterable` enum, `indices` provides the valid indices of a collection, and `enumerated()` provides offset-and-element pairs.
+
+- Swift features such as `guard`, the ternary operator (`condition ? a : b`), nil-coalescing (`??`), compound assignment (`+=`), key paths such as `\.count`, and method references such as `candidateSubset.contains` can make conditions and transformations more concise.
+
+### Generating subsets with bitmasks
+
+- A set containing `n` elements has `2ⁿ` possible subsets, including the empty subset and the full set.
+
+- Each integer from `0` through `2ⁿ - 1` can represent one subset as a binary bitmask.
+
+- `1 << index` creates a value with the bit at `index` turned on.
+
+- `mask & (1 << index)` checks whether that bit is present in the current mask. If the result is non-zero, the element at that index belongs to the current subset.
 
 ---
 
-## 💬 A Question for Developers Using AI Coding Agents
+## 🔐 TryHackMe Learning
 
-There is one thing I’ve been wondering about recently.
+- AI reconnaissance can be organized into a repeatable five-phase methodology: **passive reconnaissance, active scanning, API fingerprinting, metadata extraction, and supply chain review**.
 
-When I use Codex, the actual implementation can sometimes be completed in just a few dozen minutes, especially after I have already organized the requirements and written an implementation plan.
+- Passive reconnaissance can reveal information about AI infrastructure without directly touching the target network. Sources can include Shodan, Censys, FOFA, GitHub searches, arXiv papers, engineering blogs, public container registries, and job postings.
 
-However, understanding and reviewing the generated code still takes me much longer.
+- Active scanning should consider AI-specific services and ports in addition to traditional web services. Services such as gRPC APIs and Prometheus metrics endpoints may require follow-up checks with tools such as `grpcurl` and `curl`.
 
-Since this is my first time building an app with Swift, I often go through the implementation carefully and refer to the official Swift documentation whenever I find syntax or concepts that I do not fully understand.
+- API fingerprinting examines AI-specific endpoints, response headers, JSON structures, and error messages to identify frameworks and services exposed behind HTTP interfaces.
 
-Honestly, it would not be an exaggeration to say that I sometimes spend **more than ten times as long reviewing and understanding the implementation as Codex spent generating it**😅.
+- Metadata extraction from confirmed AI services can reveal information such as MLflow experiments, registered models, artifact URIs, user IDs, Triton model tensor specifications, vector database schemas, and Jupyter notebook credentials.
 
-At the same time, I’m becoming more familiar with Swift, and I can clearly feel that this review process is getting faster.
+- Reconnaissance activity can also leave identifiable traces in SIEM and monitoring logs, including AI-aware port scans, scripted MLflow API access without normal UI sessions, Prometheus scraping from unknown IP addresses, Jupyter API access without session cookies, and repeated model-enumeration requests.
 
-This made me curious about developers who already have a solid understanding of the programming language they are using:
-
-**When you use an AI coding agent to implement something, how much time do you usually spend reviewing and understanding the generated code afterward?**
-
-Do you read through almost everything carefully, or do you mainly focus on important areas such as architecture, tests, security, and edge cases?
-
-I’d be really interested to hear how other developers approach this.
+- Reducing the reconnaissance surface includes practical controls such as enabling MLflow authentication, restricting Jupyter access, blocking unnecessary AI-specific ports, limiting access to Prometheus metrics, rotating and scoping Hugging Face tokens, and auditing MinIO or S3 bucket policies used for model artifacts.
 
 ---
 
 # 🚀 Next Week
 
-- Continue reviewing the `ChordTonePracticeCalculatorTests` and use them to better understand the backend implementation and Swift concepts involved.
-- Continue implementing **Chord Tone Practice** as I become more confident in the backend logic.
+- Start implementing the **Chord Tone Practice UI** step by step.
 - Organize the UI adjustment points for the portfolio site implemented by Codex in Notion, then start making small UI refinements.
-- Continue working on the AI Security Learning Path.
+- Continue working on the **AI Security Learning Path**.
 
 ---
 
