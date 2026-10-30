@@ -17,30 +17,25 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
-- The weather has finally become more comfortable here in Japan, and I've been feeling excited to get outside🍂. Recently, I took a spontaneous day trip to a small island and enjoyed the beautiful scenery filled with cosmos and other autumn flowers🌸.
+- Summers in Japan have been getting extremely hot in recent years. Maybe because the weather is more comfortable now, I've noticed that festivals and fireworks displays—events I usually associate with summer—are being held around this time of year instead. I've been enjoying a little bit of summer, just later than usual🎆🍂.
 
-- On the development side, I finished reviewing the tests for **Chord Tone Practice** and followed the backend calculations step by step🎸. I also learned more about Swift's collection operations and how bitmasks can generate subsets.
+- On the development side, I made steady progress on **Chord Tone Practice** in my iOS app, **ToneDrill**🎸. I implemented and reviewed the settings overlay, improved the layout for larger text and VoiceOver, and added feedback for partial and completed answers.
 
-- I completed the **AI System Reconnaissance** room on TryHackMe🔐, learning how to approach AI reconnaissance systematically and recognize signs of this activity in logs.
+- I spent time understanding the SwiftUI code behind these features, especially **state management, adaptive layouts, closures, and `Set` operations**. Rather than just checking whether the app builds, I also reviewed Xcode Previews and tested accessibility behavior on my iPhone.
 
-- Overall, it was a week of **reviewing, understanding, and building confidence** in what I've already implemented.
+- It's been **two weeks since my last post**, but I want to keep sharing my progress, even if it's only a little at a time🙂.
 
 ---
 
 ## 📱 iOS (SwiftUI)
 
-- Completed a detailed review of `ChordTonePracticeCalculatorTests.swift`, the test file for my **Chord Tone Practice** feature, which helps users practice locating chord tones on a guitar fretboard.
-- Traced the tests into `ChordTonePracticeCalculator`, the app's chord-tone calculation component, and its related models to understand how notes, interval labels, valid answer sets, and invalid submissions are handled.
-- Reviewed an exhaustive test covering **504 combinations** of root notes, chord qualities, patterns, and visible fret ranges, including checks for pattern availability, overlapping answers, reachable combinations, and fret-range transitions.
-- Studied Swift's standard collection APIs, condition checking, bitwise operations, and Swift Testing while reviewing the implementation.
-
----
-
-## 🔐 Security (TryHackMe)
-
-- Completed **Task 6: Structured Reconnaissance Methodology and Detection**.
-- Completed the **AI System Reconnaissance** room in the AI Security Learning Path.
-- Reviewed how reconnaissance can be organized into repeatable phases and how AI-specific reconnaissance activity can be detected through logs and monitoring data.
+- Reviewed the Xcode validation results for **color assets, design tokens, and temporary fret-cell styling**, and recorded the completed checks.
+- Implemented the **Chord Tone Practice settings overlay**, including the controls for configuring practice settings. Added seven initial previews to review initial setup, reconfiguration, and larger Dynamic Type sizes.
+- Walked through `ChordTonePracticeSettingsOverlay.swift` to understand **layout, `@State` / `@Binding` ownership, button callbacks, and accessibility**. Reviewed the overlay against the design, fixed a truncated Phase 4-A header, and confirmed that the four focused previews displayed correctly.
+- Added a temporary app icon and tested **VoiceOver on my iPhone**. Also refined fretboard accessibility labels and the Answer layout after checking the accessibility previews, reducing unwanted text truncation and stretching.
+- Verified that selecting, deselecting, and replacing chord tones worked as expected. Then implemented **partial-answer validation** to determine whether the currently selected fret positions could still form one of the remaining correct chord-tone sets.
+- Added **`Good!`, single-cell incorrect-answer feedback, `Correct!`, and completion states**. An incorrect tap no longer clears previously selected temporary answers.
+- Adjusted the feedback badge to match the **220 × 42** frame in Figma, and verified the implementation with a successful build and automated tests. Recorded the completed reviews in the project task documents.
 
 ---
 
@@ -48,62 +43,41 @@ beginners, devjournal, webdev, swift , security
 
 ## 📱 SwiftUI Learning
 
-### Collection transformations and combinations
+### Adaptive layouts and text sizing
 
-- `map` applies a transformation to each element and returns the transformed results. `compactMap` also removes `nil` results, producing a collection of non-optional values.
-- `flatMap` applies a transformation that returns a sequence for each element, then concatenates those sequences into a single collection. If a transformation returns an empty array, that element contributes no values to the result.
-- `filter` keeps elements that satisfy a predicate, while `first(where:)` returns the first matching element as an optional value, or `nil` if none matches.
-- `zip` pairs the elements of two sequences in order and stops when the shorter sequence ends. For example, combining `[5, 4, 3]` and `["C", "E", "G"]` produces `(5, "C")`, `(4, "E")`, and `(3, "G")`.
-- `reduce` combines the elements of a sequence into one accumulated result using an initial value and a closure. It can also be used with `map` and `flatMap` to build combinations incrementally: extend each existing partial combination with each possible next element, then flatten the results.
-- `Set(values.map(\.id))` is one way to collect unique identifiers from a sequence, provided the identifiers conform to `Hashable`. Comparing the resulting count with the expected number can check whether the identifiers are distinct.
+- **`ViewThatFits`** evaluates its child views in the order provided and selects the first whose _ideal size_ fits the proposed space along the specified axes (horizontal, vertical, or both). It can switch from a horizontal layout to a vertical layout or a scrollable alternative as available space changes; the selection is **not based on a fixed Dynamic Type threshold**.
+- **`fixedSize(horizontal:vertical:)`** makes a view use its ideal size along the specified axes; it does **not** assign a numerical width or height. In an `HStack`, `.fixedSize(horizontal: true, vertical: false)` can prevent a text-containing group from being compressed horizontally. By contrast, **`.minimumScaleFactor`** allows text to scale down when necessary.
+- **`.dynamicTypeSize(...DynamicTypeSize.large)`** limits the _maximum_ Dynamic Type size within the modified view to `.large`. Smaller user-selected sizes still apply; larger sizes are capped in that view.
+- **`@Environment(\.dynamicTypeSize)`** reads the Dynamic Type size from the current environment. I used it to select an accessibility-specific layout while allowing the Answer text to grow.
+- **`.layoutPriority(1)`** raises a view's priority when its parent distributes space among children. It can help the Answer panel resist shrinking when an `HStack` becomes crowded; it **does not set a fixed width**.
 
-### Conditions, ordering, and Swift syntax
+### State management and settings controls
 
-- `contains(_:)` checks whether a sequence contains an equal value; `contains(where:)` checks whether **at least one** element satisfies a predicate; `allSatisfy(_:)` checks whether **every** element does. `allSatisfy` returns `true` for an empty sequence.
-- A key-path expression such as `\.isEmpty` can be passed as a predicate when its type fits the method's requirements. For example, `groups.contains(where: \.isEmpty)` returns `true` if any inner collection is empty.
-- `sorted(by: >)` returns a new collection in descending order by specifying that larger values should come first. Unlike `sort(by:)`, it does not reorder the original array.
-- `guard` requires a condition to hold before execution continues; its `else` branch must transfer control out of the enclosing scope. It can help detect unexpected results, such as when `compactMap` produces fewer elements than the original collection.
-- The ternary operator (`condition ? a : b`), nil-coalescing operator (`??`), and compound assignment (`+=`) express conditional values, fallbacks, and updates concisely. A method reference such as `allowedValues.contains` can also be passed where a matching closure is expected.
+- **`@State` and `@Binding`:** The parent stores editable draft settings in `@State`; the child receives a `@Binding` to those settings through a value such as **`$draftSettings`**. Changes made through the binding update the parent's draft, while the parent decides whether to apply or discard it. A computed selection flag such as `isSelected` can be derived from the draft instead of being stored as additional state.
+- **`LazyVGrid` and `GridItem`:** `LazyVGrid` lays out child views in columns, adding rows as needed. `GridItem` describes a column's size, spacing, and alignment. I used **six flexible columns** for twelve root-note buttons, forming a **6 × 2** grid.
+- **`Array(repeating:count:)`** creates an array containing the specified value repeated a given number of times. It helped define the six matching `GridItem` columns; **`ForEach`** generates the individual buttons. When note strings are unique, **`ForEach(..., id: \.self)`** can use each string as its identifier.
+- **Enum raw values:** `.rawValue` returns the predefined raw value of an enum case, such as `"Major"` or `"Minor"`. The UI can show that text while selection logic continues to work with the enum case itself.
 
-### Iteration, Swift Testing, and debugging
+### Closures and Swift collection operations
 
-- `CaseIterable` provides `allCases` for types that support enumerating their cases; `indices` provides a collection's valid indices; and `enumerated()` pairs elements with zero-based offsets. These offsets are not guaranteed to be the same as the collection's indices.
-- A loop such as `for (offset, element) in values.enumerated()` destructures each pair into its offset and element.
-- In Swift Testing, `@Test` marks a test function. Related tests can be grouped in a suite type; `@Suite` explicitly annotates the type and supports suite configuration, but is not required for a type containing tests to be recognized as a suite.
-- `#expect` records a failed expectation and allows the test to keep executing. `#require` records a failure and throws an error, preventing the current execution path from continuing when its requirement is not met. Both can be evaluated within loops.
-- Saving a calculated result in a local variable before checking it with `#expect` makes it easier to examine inputs and outputs separately during debugging.
-- In LLDB, commands such as `v value` and `po type(of: value)` help inspect values and types at runtime. Writing a closure-based expression on one line can make it easier to enter in the debugger.
+- **Closures and `@escaping`:** A closure is a value containing executable code. **`@escaping`** permits a closure parameter to be stored or invoked after the function receiving it returns. In my `optionButton` helper, an action is passed to `Button` and called when the user activates it. Neither `@escaping` nor trailing-closure syntax executes the action immediately or makes it asynchronous.
+- **Closure syntax:** The **`in`** keyword separates a closure's parameter declaration from its body. Swift can infer parameter and return types from context; a single-expression closure can return its expression implicitly.
+- **`filter(_:)`** evaluates a predicate closure for each element and returns a new collection containing the elements for which the predicate is `true`. It does **not** modify the original collection.
+- **`Set` and `isSubset(of:)`:** A `Set` stores unique, unordered values whose element type conforms to `Hashable`. **`selected.isSubset(of: answer)`** returns `true` when _every_ selected element is contained in `answer`. Equality also counts as a subset, so the method can help check both valid partial selections and complete selections. Checking whether an answer is **fully complete** still requires an additional condition, such as set equality.
 
-### Generating subsets with bitmasks
+### Previews, accessibility, and validation
 
-- A collection of `n` distinct elements has `2ⁿ` subsets, including the empty subset and the full set.
-- Integers from `0` through `2ⁿ - 1` can represent these subsets using binary bitmasks, with one bit assigned to each element.
-- `1 << index` shifts the binary value `1` left by `index` positions to select a particular bit.
-- `mask & (1 << index)` performs a bitwise AND. A non-zero result means the selected bit is set, so the corresponding element belongs to that subset.
+- **Preview helpers:** `ChordToneSettingsPreview` is a preview-only parent that supplies bindings and callbacks so the overlay can be examined in different states.
+- **Accessibility modifiers:** **`.allowsHitTesting(false)`** removes a view from touch hit testing; **`.isHeader`** provides the accessibility header trait without changing the visual styling of the heading. Standard SwiftUI controls provide basic VoiceOver behavior, but custom controls need meaningful labels, values, and state information.
+- **Testing on a real device matters:** A successful build confirms that the code compiles, not that the layout looks correct or VoiceOver behaves as intended. Xcode Previews help check layouts; testing on an iPhone helps verify actual accessibility interactions. An app icon is also separate from the code-signing and installation requirements.
 
----
-
-## 🔐 TryHackMe Learning
-
-- AI reconnaissance can be organized into a repeatable five-phase methodology: **passive reconnaissance, active scanning, API fingerprinting, metadata extraction, and supply chain review**.
-
-- Passive reconnaissance can reveal information about AI infrastructure without directly touching the target network. Sources can include Shodan, Censys, FOFA, GitHub searches, arXiv papers, engineering blogs, public container registries, and job postings.
-
-- Active scanning should consider AI-specific services and ports in addition to traditional web services. Services such as gRPC APIs and Prometheus metrics endpoints may require follow-up checks with tools such as `grpcurl` and `curl`.
-
-- API fingerprinting examines AI-specific endpoints, response headers, JSON structures, and error messages to identify frameworks and services exposed behind HTTP interfaces.
-
-- Metadata extraction from confirmed AI services can reveal information such as MLflow experiments, registered models, artifact URIs, user IDs, Triton model tensor specifications, vector database schemas, and Jupyter notebook credentials.
-
-- Reconnaissance activity can also leave identifiable traces in SIEM and monitoring logs, including AI-aware port scans, scripted MLflow API access without normal UI sessions, Prometheus scraping from unknown IP addresses, Jupyter API access without session cookies, and repeated model-enumeration requests.
-
-- Reducing the reconnaissance surface includes practical controls such as enabling MLflow authentication, restricting Jupyter access, blocking unnecessary AI-specific ports, limiting access to Prometheus metrics, rotating and scoping Hugging Face tokens, and auditing MinIO or S3 bucket policies used for model artifacts.
+**Apple documentation for review:** [ViewThatFits](https://developer.apple.com/documentation/swiftui/viewthatfits) · [Dynamic Type size range](https://developer.apple.com/documentation/swiftui/view/dynamictypesize%28_%3A%29-26aj0) · [layoutPriority(\_:)](https://developer.apple.com/documentation/swiftui/view/layoutpriority%28_%3A%29) · [Set and subset operations](https://developer.apple.com/documentation/swift/set)
 
 ---
 
 # 🚀 Next Week
 
-- Start implementing the **Chord Tone Practice UI** step by step.
+- Improve the **Chord Tone Practice** feature by adding more question variations, refining the settings screen, and strengthening automated tests.
 - Organize the UI adjustment points for the portfolio site implemented by Codex in Notion, then start making small UI refinements.
 - Continue working on the **AI Security Learning Path**.
 
