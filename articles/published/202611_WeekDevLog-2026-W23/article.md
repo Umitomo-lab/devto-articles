@@ -94,17 +94,6 @@ func nextQuestionCandidates(
 - **`map(_:)`** transforms each element by applying a closure and collects the results. In my app, it can turn a combination of root, quality, and pattern into a **`ChordTonePracticeSettings`** value.
 - **`flatMap(_:)`**, when used with a collection-returning transformation, concatenates the resulting collections into one collection. Combined with nested loops or transformations, it can produce a **single array of all 72 question combinations**, rather than nested arrays.
 
-### Question candidates and valid answers are different
-
-- **`availablePatterns`** checks which chord-tone patterns have answer sets under a particular condition.
-- **`nextQuestionCandidates`** generates complete questions from root, quality, and pattern combinations, excluding the current one.
-- These functions answer **different questions**: whether an answer exists for a pattern versus which question to show next.
-
-### What exhaustive tests confirmed
-
-- Under the current **standard guitar tuning** rules, the tests covered **72 current-question cases** and **504 question-and-fret-range conditions**. All 504 conditions had at least one answer set in the tested rules.
-- This supports an assumption for the **current implementation**, not a universal guarantee. If I add **custom tunings**, I will need to review the candidate-generation rules and run the checks again.
-
 ### 📚 References — Apple Developer Documentation
 
 These official references are useful when I review the APIs and concepts from this week:
