@@ -17,75 +17,77 @@ beginners, devjournal, webdev, swift , security
 
 ## 🗓️ This Week
 
-- Work has been **really busy**, and finding time for my personal projects hasn't been easy. But I've managed to make a little progress by using small pockets of free time. I realized that simply **spending less time mindlessly scrolling through social media** gives me more time than I expected. It's funny how much time I can waste without even noticing 😂.
+- I started using a **paper planner for the first time in years** 📓. Since I began posting these weekly Dev.to logs, I've also developed a habit of recording what I work on. That habit has helped me notice things I might otherwise have overlooked.
 
-- At the same time, I think **having time to switch off and do nothing** is important too. I don't want to turn every spare minute into something productive. I'm trying to find a healthy balance so I can keep enjoying my hobbies without pushing myself too hard 🙂.
+- Writing things down by hand has been surprisingly refreshing. It helps me **organize my thoughts and come up with new ideas**. I'd love to write a separate article about what I've discovered through journaling someday 🙂.
 
-- On the development side, I started working on a **new game-style quiz mode** for my iOS music practice app, **ToneDrill**🎸. The idea is to make the note and chord-tone exercises I've already built more engaging by adding a timed challenge and a results screen.
+- On the development side, I continued planning a **game-style note quiz** for my iOS music practice app, **ToneDrill** 🎸. This week, I focused on defining how questions and difficulty levels should work, rather than jumping straight into implementation.
 
-- This week was mostly about **planning before coding**. I worked out the basic game rules with Codex, organized the implementation steps, and refined the new menu design in Figma. It was fun seeing the idea take shape even before starting the main implementation! 🎮
+- I worked with **Codex** to explore game mechanics and edge cases, then used **Figma** to review the difficulty-selection screen. I learned that a design can look good on its own but still feel inconsistent with the rest of an app 🎮.
 
 ---
 
 ## 📱 iOS (SwiftUI)
 
-### Starting a new game-style quiz mode 🎮
+### Refining the note quiz rules with Codex 🎮
 
-- Created a **shared specification** for two existing types of music exercises: identifying notes and practicing chord tones. The goal is to offer both as game-style quizzes from one menu.
-- Organized the work into phases, from **menu design** and **game-rule planning** through implementation and final verification, and recorded the plan in the project's task files.
-- Finalized the **Figma menu design** with two quiz cards, custom icons, a timer element, and accessibility-related UI states.
-- Defined the initial **minimum viable product (MVP)** rules shared by both games: a **60-second timer**, a countdown, scoring, accuracy, a results screen, difficulty levels, record tracking, and handling for interruptions.
+- Worked with **Codex** to define the basic game flow, focusing on keeping the gameplay simple and intuitive.
+- Refined the question-selection rules to provide a **greater variety of questions** rather than repeatedly asking similar ones.
+- Designed different difficulty levels to make the game accessible to beginners while offering a more challenging experience for advanced players.
+- Proposed an additional game mechanic to encourage players to find notes in different positions on the guitar fretboard instead of relying on familiar ones. I then worked with Codex to refine the rules and ensure that the game would remain playable in all situations.
+- Organized these decisions into a **clear game specification** before moving on to UI design and implementation.
 
-**My progress this week:** The main achievement was creating a clear starting point for the new mode. The game itself is **not finished yet**; I focused on its design and specification first.
+### Reviewing the difficulty-selection screen in Figma 🎨
+
+- Created and reviewed an initial UI design for selecting the game's difficulty level.
+- Compared the new design with an existing screen to check whether it was consistent with the rest of the app.
+- Refined the visual feedback for the selected difficulty level to follow the app's **existing design patterns**.
+
+**My progress this week:** The game is really starting to take shape! 🎮
 
 ---
 
 # 💡 Key Takeaways
 
-## 📱 Planning a Feature Before Implementation
+## 📱 Designing Game Rules with Codex
 
-### Start with the overall direction
+### Turning my own ideas into game rules
 
-Before writing code, I discussed the new quiz mode with **Codex** and documented the decisions in task-management files.
+While discussing the game rules with **Codex**, I came up with an idea to make the game more engaging and effective as a practice tool.
 
-- A **parent specification** helps keep the two quiz types aligned around the same overall goal.
-- A **phased roadmap** gives me an order for the work without requiring every implementation detail to be decided immediately.
-- Starting with a small, shared set of **MVP rules** makes it easier to separate the essential game behavior from ideas that can be added later.
+I wanted to encourage players to find notes in different positions on the guitar fretboard rather than relying on familiar ones.
 
-**My takeaway:** I don't need to settle every detail at the beginning. It's more useful to agree on the purpose, scope, and next steps, then refine the implementation as I go.
+However, introducing a new game mechanic can affect other existing rules. For example, restricting previously used positions could eventually leave players with no valid answer.
 
-### Using Codex and Figma to refine UI designs 🎨
+By working through these rules with Codex, I was able to identify potential **edge cases**, separate the responsibilities of each rule, and refine my idea without breaking the overall game flow.
 
-This week, I also learned more about how to iterate on a design while keeping related UI elements consistent.
+**My takeaway:** I don't have to simply accept what Codex initially suggests. I can contribute my own ideas and use Codex as a partner to explore how to turn them into practical, well-defined game rules.
 
-- I could describe specific adjustments to **Codex**, make changes in **Figma**, and continue reviewing the updated design instead of starting again from scratch.
-- The workflow was particularly helpful when similar changes needed to be applied consistently across the design.
+### Clarifying game behavior before writing code
 
-**My takeaway:** Small design adjustments are easier to manage when I review them against the full screen instead of treating each element separately.
+Working with Codex to explore different ideas and discuss the potential consequences of each decision helped me clarify how I wanted the game to work.
 
-### Defining rules shared by both quiz games
+Instead of jumping straight into implementation, I focused on defining **what the game should do** before deciding **how to implement it in Swift**.
 
-Both practice modes need the same core game behavior, so I wrote down the rules before implementing them:
+**My takeaway:** Defining the expected behavior before writing code makes it easier to identify potential problems, evaluate alternatives, and establish a clear foundation for implementation and testing.
 
-| Element       | Initial rule or planned behavior             |
-| ------------- | -------------------------------------------- |
-| Time limit    | A **60-second** challenge                    |
-| Start         | A countdown before the quiz begins           |
-| Performance   | Track **score** and **accuracy**             |
-| Finish        | Display the results                          |
-| Challenge     | Support different **difficulty levels**      |
-| Progress      | Keep **records** of past results             |
-| Interruptions | Define how the game behaves when interrupted |
+## 🎨 Keeping New UI Consistent with the Existing App
 
-These are **planned MVP requirements**, not features I have already completed.
+### Review the whole product, not just one screen
 
-**My takeaway:** Discussing the rules with Codex helped me keep the design simple and focus on a shared foundation before adding more complicated game mechanics.
+While reviewing a UI design proposed by Codex, I noticed that although the design looked good on its own, it didn't fully match the visual patterns already established in my app.
+
+This made me realize the importance of reviewing new designs in the context of the **entire application**, rather than evaluating each screen individually.
+
+Existing screens are valuable references for maintaining consistency in appearance, interaction, and visual feedback.
+
+**My takeaway:** Codex can help me create and refine UI designs, but it may not always take the entire product's design language into account. Human review is still important for maintaining a consistent user experience across the app.
 
 ---
 
 # 🚀 Next Week
 
-- Start working on the **Note Quiz game**, focusing on its rules, difficulty levels, and UI design.
+- Finalize the quiz's **Playing and Result screens** in Figma, then explore **motion prototypes** for Start, Resume, Time Up, and Reduce Motion behavior before implementation.
 - Organize the UI adjustments for my portfolio site in Notion, then continue making small refinements.
 - Continue working on the **AI Security Learning Path**.
 
